@@ -11,14 +11,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ToDoubt">
-        <activity android:name=".RegisterActivity" android:theme="@style/Theme.ToDoubt.NoActionBar">
-
+        <activity android:name=".SplashScreenActivity"  android:theme="@style/Theme.ToDoubt.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:theme="@style/Theme.ToDoubt.NoActionBar">
+
+        </activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

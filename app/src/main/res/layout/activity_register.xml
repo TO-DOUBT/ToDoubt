@@ -17,11 +17,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/img_register" />
+
+
     <!--Oscurecer Fondo-->
 
-
     <View
-        android:id="@+id/blackScreen"
+        android:id="@+id/blackScreen_registro"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/scrim_splash"
