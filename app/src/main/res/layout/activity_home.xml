@@ -6,44 +6,665 @@
     android:layout_height="match_parent"
     tools:context=".Home">
 
-    <androidx.cardview.widget.CardView
+    <TextView
+        android:id="@+id/home_ProximoPartido_txt2"
         android:layout_width="0dp"
-        android:layout_height="215dp"
-        android:backgroundTint="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/Home_gd_4"
-        app:layout_constraintEnd_toStartOf="@+id/Home_gd_2"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/Home_gd_1"
-        app:layout_constraintTop_toTopOf="@+id/Home_gd_3">
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center"
+        android:paddingTop="1dp"
+        android:text="Jugados"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/home_gd_9"
+        app:layout_constraintEnd_toStartOf="@+id/home_gd_5"
+        app:layout_constraintStart_toStartOf="@+id/home_gd_1"
+        app:layout_constraintTop_toBottomOf="@+id/home_estadistica_1" />
 
+    <TextView
+        android:id="@+id/home_ProximoPartido_txt3"
+        android:layout_width="74dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:gravity="center"
+        android:paddingTop="1dp"
+        android:text="Empatados"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/home_gd_9"
+        app:layout_constraintEnd_toStartOf="@+id/home_gd_7"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/home_gd_5"
+        app:layout_constraintTop_toBottomOf="@+id/home_estadistica_2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/home_ProximoPartido_txt4"
+        android:layout_width="74dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:gravity="center"
+        android:paddingTop="1dp"
+        android:text="Ganados"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/home_gd_8"
+        app:layout_constraintEnd_toStartOf="@+id/home_gd_7"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/home_gd_5"
+        app:layout_constraintTop_toBottomOf="@+id/home_estadistica_4"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/home_ProximoPartido_txt5"
+        android:layout_width="74dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center"
+        android:paddingTop="1dp"
+        android:text="Perdidos"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/home_gd_8"
+        app:layout_constraintEnd_toStartOf="@+id/home_gd_5"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/home_gd_1"
+        app:layout_constraintTop_toBottomOf="@+id/home_estadistica_4"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/home_CV_proximoPartido"
+        style="@style/Base.CardView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:backgroundTint="@color/black"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/home_gd_4"
+        app:layout_constraintEnd_toStartOf="@+id/home_gd_2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/home_gd_1"
+        app:layout_constraintTop_toTopOf="@+id/home_gd_3">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/home_ProximoPartido_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Próximo Partido"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toTopOf="@+id/home_gd_card_4"
+                app:layout_constraintEnd_toStartOf="@+id/home_gd_card_2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/home_gd_card_1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/home_ProximoPartido"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="vs Boadilla CF"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/home_gd_card_3"
+                app:layout_constraintEnd_toStartOf="@+id/home_gd_card_5"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/home_gd_card_1"
+                app:layout_constraintTop_toTopOf="@+id/home_gd_card_4"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/home_LocalVisitante"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:text="Local"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/home_gd_card_5"
+                app:layout_constraintStart_toStartOf="@+id/home_gd_card_1"
+                app:layout_constraintTop_toTopOf="@+id/home_gd_card_3" />
+
+            <TextView
+                android:id="@+id/home_LocalVisitante2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="sans-serif-thin"
+                android:gravity="right"
+                android:text="Ver Detalles"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/home_flecha_1"
+                app:layout_constraintStart_toEndOf="@+id/home_LocalVisitante"
+                app:layout_constraintTop_toTopOf="@+id/home_gd_card_3" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/home_gd_card_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="16dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/home_gd_card_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="16dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/home_gd_card_5"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="132dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/home_gd_card_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_end="30dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/home_gd_card_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_end="58dp" />
+
+            <ImageView
+                android:id="@+id/home_flecha_1"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/home_gd_card_2"
+                app:layout_constraintTop_toTopOf="@+id/home_gd_card_3"
+                app:srcCompat="@drawable/ic_baseline_arrow_right_alt_24" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/Home_gd_1"
+        android:id="@+id/home_gd_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="16dp"/>
+        app:layout_constraintGuide_begin="16dp" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/Home_gd_2"
+        android:id="@+id/home_gd_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_end="16dp" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/Home_gd_3"
+        android:id="@+id/home_gd_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="16dp"/>
+        app:layout_constraintGuide_begin="67dp" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/Home_gd_4"
+        android:id="@+id/home_gd_4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="231dp" />
+        app:layout_constraintGuide_begin="240dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/home_gd_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="96dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/home_gd_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="274dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/home_gd_7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/home_gd_8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="496dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/home_gd_9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="385dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/home_gd_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="246dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/home_gd_11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="564dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/home_gd_12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="676dp" />
+
+    <TextView
+        android:id="@+id/home_NombreEquipo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="@string/nombre_equipo"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/home_CV_proximoPartido"
+        app:layout_constraintEnd_toStartOf="@+id/home_gd_2"
+        app:layout_constraintStart_toStartOf="@+id/home_gd_1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/home_Partido_txt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:text="Partidos"
+        android:textColor="#000000"
+        android:textSize="23dp"
+        app:layout_constraintBottom_toTopOf="@+id/home_gd_6"
+        app:layout_constraintEnd_toStartOf="@+id/home_gd_2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/home_gd_1"
+        app:layout_constraintTop_toTopOf="@+id/home_gd_4"
+        app:layout_constraintVertical_bias="0.166" />
+
+    <ImageView
+        android:id="@+id/home_estadistica_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/home_gd_9"
+        app:layout_constraintEnd_toStartOf="@+id/home_gd_5"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/home_gd_1"
+        app:layout_constraintTop_toTopOf="@+id/home_gd_6"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/bola_estadistica" />
+
+    <TextView
+        android:id="@+id/home_partidosJugados"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="15"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/home_estadistica_1"
+        app:layout_constraintEnd_toEndOf="@+id/home_estadistica_1"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="@+id/home_gd_1"
+        app:layout_constraintTop_toTopOf="@+id/home_estadistica_1"
+        app:layout_constraintVertical_bias="0.484" />
+
+    <ImageView
+        android:id="@+id/home_estadistica_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="28dp"
+        app:layout_constraintBottom_toTopOf="@+id/home_gd_9"
+        app:layout_constraintEnd_toStartOf="@+id/home_gd_7"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/home_gd_5"
+        app:layout_constraintTop_toTopOf="@+id/home_gd_6"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/bola_estadistica" />
+
+    <TextView
+        android:id="@+id/home_partidosEmpatados"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="5"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/home_estadistica_2"
+        app:layout_constraintEnd_toEndOf="@+id/home_estadistica_2"
+        app:layout_constraintStart_toStartOf="@+id/home_estadistica_2"
+        app:layout_constraintTop_toTopOf="@+id/home_estadistica_2"
+        app:layout_constraintVertical_bias="0.484" />
+
+    <ImageView
+        android:id="@+id/home_estadistica_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/home_gd_8"
+        app:layout_constraintEnd_toStartOf="@+id/home_gd_5"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/home_gd_1"
+        app:layout_constraintTop_toTopOf="@+id/home_gd_9"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/bola_estadistica" />
+
+    <TextView
+        android:id="@+id/home_partidosPerdidos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="5"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/home_estadistica_3"
+        app:layout_constraintEnd_toEndOf="@+id/home_estadistica_3"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="@+id/home_estadistica_3"
+        app:layout_constraintTop_toTopOf="@+id/home_estadistica_3"
+        app:layout_constraintVertical_bias="0.515" />
+
+    <ImageView
+        android:id="@+id/home_estadistica_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/home_gd_8"
+        app:layout_constraintEnd_toStartOf="@+id/home_gd_7"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/home_gd_5"
+        app:layout_constraintTop_toTopOf="@+id/home_gd_9"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/bola_estadistica" />
+
+    <TextView
+        android:id="@+id/home_partidosGanados"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="5"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/home_estadistica_4"
+        app:layout_constraintEnd_toEndOf="@+id/home_estadistica_4"
+        app:layout_constraintStart_toStartOf="@+id/home_estadistica_4"
+        app:layout_constraintTop_toTopOf="@+id/home_estadistica_4" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/home_gd_8"
+        app:layout_constraintEnd_toStartOf="@+id/home_gd_7"
+        app:layout_constraintStart_toStartOf="@+id/home_gd_7"
+        app:layout_constraintTop_toTopOf="@+id/home_gd_6" />
+
+    <TextView
+        android:id="@+id/home_posicion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="15"
+        android:textColor="#000000"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/home_gd_9"
+        app:layout_constraintEnd_toStartOf="@+id/home_gd_2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/home_gd_10"
+        app:layout_constraintTop_toTopOf="@+id/home_gd_6"
+        app:layout_constraintVertical_bias="0.531" />
+
+    <TextView
+        android:id="@+id/home_puntos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="9"
+        android:textColor="#000000"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toStartOf="@+id/home_puntos_txt_3"
+        app:layout_constraintHorizontal_bias="0.74"
+        app:layout_constraintStart_toStartOf="@+id/home_gd_10"
+        app:layout_constraintTop_toTopOf="@+id/home_gd_9" />
+
+    <TextView
+        android:id="@+id/home_posicion_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:text="Posición"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/home_gd_9"
+        app:layout_constraintEnd_toStartOf="@+id/home_gd_2"
+        app:layout_constraintHorizontal_bias="0.947"
+        app:layout_constraintStart_toStartOf="@+id/home_gd_10"
+        app:layout_constraintTop_toTopOf="@+id/home_gd_6"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/home_puntos_txt_1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:text="A"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/home_gd_8"
+        app:layout_constraintEnd_toStartOf="@+id/home_gd_10"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/home_gd_7"
+        app:layout_constraintTop_toTopOf="@+id/home_gd_9"
+        app:layout_constraintVertical_bias="0.19" />
+
+    <TextView
+        android:id="@+id/home_puntos_txt_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:text="pts."
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/home_gd_8"
+        app:layout_constraintEnd_toStartOf="@+id/home_gd_2"
+        app:layout_constraintHorizontal_bias="0.69"
+        app:layout_constraintStart_toStartOf="@+id/home_gd_10"
+        app:layout_constraintTop_toTopOf="@+id/home_gd_9"
+        app:layout_constraintVertical_bias="0.63" />
+
+    <TextView
+        android:id="@+id/home_puntos_txt_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:gravity="right"
+        android:text="Del lider:"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/home_gd_8"
+        app:layout_constraintEnd_toStartOf="@+id/home_gd_2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/home_gd_7"
+        app:layout_constraintTop_toTopOf="@+id/home_gd_9"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/home_primero"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="7dp"
+        android:gravity="right"
+        android:text="Móstoles C:F"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/home_gd_8"
+        app:layout_constraintEnd_toStartOf="@+id/home_gd_2"
+        app:layout_constraintStart_toEndOf="@+id/home_puntos_txt_2"
+        app:layout_constraintTop_toBottomOf="@+id/home_puntos" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/home_CV_Gestion"
+        style="@style/Base.CardView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="@color/black"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/home_gd_12"
+        app:layout_constraintEnd_toStartOf="@+id/home_gd_7"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/home_gd_1"
+        app:layout_constraintTop_toTopOf="@+id/home_gd_11">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/home_flecha_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0"
+                app:srcCompat="@drawable/ic_baseline_arrow_right_alt_24" />
+
+            <TextView
+                android:id="@+id/home_gestion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Gestion"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.083"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/home_CV_proximosEventos"
+        style="@style/Base.CardView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/black"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/home_gd_11"
+        app:layout_constraintEnd_toStartOf="@+id/home_gd_2"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="@+id/home_gd_1"
+        app:layout_constraintTop_toTopOf="@+id/home_gd_8">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/home_flecha_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_arrow_right_alt_24" />
+
+            <TextView
+                android:id="@+id/home_verProximosEventos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Ver Proximos Eventos"
+                android:textColor="@color/white"
+
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.52" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/home_CV_Clasificacion"
+        style="@style/Base.CardView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/black"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/home_gd_12"
+        app:layout_constraintEnd_toStartOf="@+id/home_gd_2"
+        app:layout_constraintStart_toStartOf="@+id/home_gd_7"
+        app:layout_constraintTop_toTopOf="@+id/home_gd_11">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/home_flecha_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0"
+                app:srcCompat="@drawable/ic_baseline_arrow_right_alt_24" />
+
+            <TextView
+                android:id="@+id/home_clasificacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Clasificacion"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.083"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
