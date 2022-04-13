@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ToDoubt</string>
+    <string name="profile_info">Detalles personales</string>
+    <string name="profile_estadisticas">Estadisticas</string>
 </resources>
