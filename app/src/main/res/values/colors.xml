@@ -4,4 +4,10 @@
     <color name="orange_detail_light">#CDFA6A18</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="fondo">#6A6969</color>
+    <color name="purple_200">#422673</color>
+    <color name="purple_500">#673AB7</color>
+    <color name="purple_700">#9C27B0</color>
+    <color name="teal_200">#3F51B5</color>
+    <color name="teal_700">#2196F3</color>
 </resources>
