@@ -66,6 +66,7 @@
         android:maxLines="1"
         android:textSize="15dp"
         android:inputType="text"
+        android:fontFamily="@font/actor"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -88,6 +89,7 @@
         android:textColorHint="@color/white"
         android:textSize="15dp"
         android:inputType="textPassword"
+        android:fontFamily="@font/actor"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -110,6 +112,7 @@
         android:textColorHint="@color/white"
         android:textSize="15dp"
         android:inputType="textEmailAddress"
+        android:fontFamily="@font/actor"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -127,6 +130,8 @@
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="17dp"
+        android:fontFamily="@font/actor"
+
         app:layout_constraintBottom_toTopOf="@+id/linearLayoutCompat"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -134,14 +139,15 @@
         app:layout_constraintTop_toBottomOf="@+id/campo_registro_gmail"
         app:layout_constraintVertical_bias="0.52" />
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <LinearLayout
         android:id="@+id/linearLayoutCompat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toTopOf="@+id/marca_agua"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/actor">
 
         <TextView
             android:id="@+id/pregunta1_registro"
@@ -158,7 +164,7 @@
             android:text="Inicia Sesión"
             android:textColor="@color/orange_detail" />
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/marca_agua"
