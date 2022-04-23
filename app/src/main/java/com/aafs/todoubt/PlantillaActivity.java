@@ -1,21 +1,22 @@
 package com.aafs.todoubt;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class PlantillaActivity extends AppCompatActivity implements androidx.appcompat.widget.SearchView.OnQueryTextListener {
-
+public class PlantillaActivity extends AppCompatActivity implements SearchView.OnQueryTextListener  {
 
     private ListAdapter listAdapter;
     private RecyclerView recyclerView;
     private List<ListElement> items;
-    private androidx.appcompat.widget.SearchView buscador_plantilla_jugadores;
+    private SearchView buscador_plantilla_jugadores;
 
 
 
@@ -27,11 +28,13 @@ public class PlantillaActivity extends AppCompatActivity implements androidx.app
 
         initViews();
         initValues();
+        initListener();
     }
 
     private void initViews(){
-        //buscador_plantilla_jugadores.setOnQueryTextListener(this);
         recyclerView = findViewById(R.id.recycler_jugadores_plantilla);
+        buscador_plantilla_jugadores = findViewById(R.id.buscador_plantilla);
+
     }
     private void initValues(){
         LinearLayoutManager manager = new LinearLayoutManager(this);
@@ -41,8 +44,11 @@ public class PlantillaActivity extends AppCompatActivity implements androidx.app
        //recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(listAdapter);
 
-        buscador_plantilla_jugadores = findViewById(R.id.buscador_plantilla);
-    }
+       }
+
+       private void initListener(){
+        buscador_plantilla_jugadores.setOnQueryTextListener(this);
+       }
     public List<ListElement> getItems(){
 
         List<ListElement> elements = new ArrayList<>();
@@ -78,7 +84,7 @@ public class PlantillaActivity extends AppCompatActivity implements androidx.app
 
     @Override
     public boolean onQueryTextChange(String newText) {
-        //listAdapter.filter(newText);
+        listAdapter.filter(newText);
         return false;
     }
 }
