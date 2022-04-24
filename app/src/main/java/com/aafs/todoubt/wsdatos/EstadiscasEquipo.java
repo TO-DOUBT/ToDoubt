@@ -1,17 +1,12 @@
 package com.aafs.todoubt.wsdatos;
 
-public class DatosEquipo {
-    private String nombreEquipo;
-    private int partidosJugados;
-    private int partidosEmpatados;
-    private int partidosPerdidos;
-    private int partidosGanados;
-    private int posicion;
-    private int puntos;
-    private String lider;
-    private int puntos_lider;
+public class EstadiscasEquipo {
 
-    public DatosEquipo(){}
+    private String nombreEquipo, lider, linkDetalle;
+    private int partidosJugados, partidosEmpatados, partidosPerdidos, partidosGanados,
+            posicion, puntos_lider, puntos;
+
+    public EstadiscasEquipo(){}
 
     public String getNombreEquipo() {
         return nombreEquipo;
@@ -83,5 +78,13 @@ public class DatosEquipo {
 
     public void setPuntos_lider(int puntos_lider) {
         this.puntos_lider = puntos_lider;
+    }
+
+    public String getLinkDetalle() {
+        return linkDetalle;
+    }
+
+    public void setLinkDetalle(String linkDetalle) {
+        this.linkDetalle = linkDetalle;
     }
 }

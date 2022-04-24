@@ -16,7 +16,7 @@ public class HiloPeticionDatos implements Runnable {
     @Override
     public void run() {
         PeticionDatos.conectar1();
-        DatosEquipo a = PeticionDatos.pedirDatos();
+        EstadiscasEquipo a = PeticionDatos.pedirDatos();
         context.devolverDatos(a);
 
         PeticionDatos.conectar2();
@@ -24,8 +24,11 @@ public class HiloPeticionDatos implements Runnable {
         context.devolverDatosPartido(b);
         Log.d("TAG", "run: " + a.getPosicion());
     }
-    public interface InterfazLanzamientos{
-        public void devolverDatos(DatosEquipo data);
+    public interface InterfazDatos {
+        public void devolverDatos(EstadiscasEquipo data);
         public void devolverDatosPartido(List<DatosPartido> data);
+    }
+    public interface InterfazDatos2 {
+
     }
 }

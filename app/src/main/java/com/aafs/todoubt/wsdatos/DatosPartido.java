@@ -1,6 +1,8 @@
 package com.aafs.todoubt.wsdatos;
 
-public class DatosPartido {
+import java.io.Serializable;
+
+public class DatosPartido implements Serializable {
     private String equipoLocal, equipoVisitante;
     private String resultado;
     private String fecha, actaPartido, jornada;

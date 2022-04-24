@@ -14,12 +14,16 @@ import java.util.List;
 public class PeticionDatos {
 
     private static Document doc;
-    private static DatosEquipo a;
+    private static DatosPartido aux;
+    private static EstadiscasEquipo a;
     private static List<DatosPartido> b;
+    private static DetalleEquipo c;
+    private static DatosJugador d;
+
 
     public static void conectar1() {
         try {
-            a = new DatosEquipo();
+            a = new EstadiscasEquipo();
             // Cambiar dependiendo del Equipo
             a.setNombreEquipo("A.D. VILLAVICIOSA DE ODON 'B'");
             doc = Jsoup.connect("http://www.rffm.es/competiciones/clasificaciones?season=17&type=1&grouping=1&competition=13564513&group=13564514&round=").get();
@@ -35,7 +39,21 @@ public class PeticionDatos {
             e.printStackTrace();
         }
     }
-    public static DatosEquipo pedirDatos() {
+    public static void conectar3() {
+        try {
+            doc = Jsoup.connect(a.getLinkDetalle()).get();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public static void conectar4(String link) {
+        try {
+            doc = Jsoup.connect(link).get();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public static EstadiscasEquipo pedirDatos() {
         int contador = 0;
         int lider = 0;
         Elements newsHeadlines = doc.getElementsByClass("table-row");
@@ -43,6 +61,7 @@ public class PeticionDatos {
             if(contador != 1){
                 if(lider == 0){
                     a.setLider(headline.child(0).child(1).child(1).text());
+                    a.setPuntos_lider(Integer.parseInt(headline.child(1).child(0).text()));
                     lider++;
                 }
                if (a.getNombreEquipo().equals(headline.child(0).child(1).child(1).text())){
@@ -53,6 +72,7 @@ public class PeticionDatos {
                     a.setPartidosPerdidos(Integer.parseInt(headline.child(5).child(0).text()));
                     a.setPuntos(Integer.parseInt(headline.child(1).child(0).text()));
                     a.setPosicion(Integer.parseInt(headline.child(0).child(0).text()));
+                    a.setLinkDetalle(headline.child(0).child(1).child(1).attr("href"));
                    contador++;
                }
             }
@@ -60,7 +80,6 @@ public class PeticionDatos {
         return a;
     }
     public static List<DatosPartido> pedirDatosPartido(){
-        DatosPartido aux;
         Elements newsHeadlines = doc.getElementsByClass("table matches session calendario");
         for (Element headline : newsHeadlines) {
             aux = new DatosPartido();
@@ -78,11 +97,37 @@ public class PeticionDatos {
                     // Acta
                     aux.setResultado(headline.child(1).child(i).child(1).child(0).child(0).text());
                     aux.setActaPartido(headline.child(1).child(i).child(1).child(0).child(1).child(0).attr("href"));
-
                 }
             }
             b.add(aux);
         }
         return b;
     }
+    public static DetalleEquipo pedirDatosPlantilla(){
+        c = new DetalleEquipo();
+        c.getJugadoresEquipo();
+        DatosJugador aux;
+        Elements newsHeadlines = doc.getElementsByClass("table-row");
+        for (Element headline : newsHeadlines) {
+           aux = new DatosJugador();
+           aux.setLinkJugador(headline.child(0).child(0).attr("href"));
+           aux.setNombreCompleto(headline.child(0).child(0).text());
+           c.getJugadoresEquipo().add(aux);
+        }
+        Element el = doc.getElementById("nombre-campo");
+        c.setCampo(el.child(0).text());
+        return c;
+    }
+    public static DatosJugador pedirDatosJugador(){
+        Elements newsHeadlines = doc.getElementsByClass("table-row");
+        for (Element headline : newsHeadlines) {
+
+        }
+        Element el = doc.getElementById("nombre-campo");
+        c.setCampo(el.child(0).text());
+
+        return d;
+    }
+
+
 }

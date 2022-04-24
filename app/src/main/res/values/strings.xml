@@ -20,4 +20,5 @@
     <string name="H_proximosEventos">Ver proximos eventos</string>
     <string name="H_gestion">Gestion</string>
     <string name="H_clasificacion">Clasificacion</string>
+    <string name="title_activity_detalles_partido">Map</string>
 </resources>
