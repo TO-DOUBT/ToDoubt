@@ -1,3 +1,14 @@
 <resources>
+    <!--Perfil-->
     <string name="app_name">ToDoubt</string>
+    <string name="profile_info">Detalles personales</string>
+    <string name="profile_estadisticas">Estadisticas</string>
+    <string name="profile_nombre_completo">Nombre Completo</string>
+    <string name="profile_fecha_nac">Fecha de Nacimiento</string>
+    <string name="profile_dni">DNI/Pasaporte</string>
+    <string name="profile_amarillas">Amarillas</string>
+    <string name="profile_minutos">Minutos</string>
+    <string name="profile_goles">Goles</string>
+    <string name="profile_dorsal">Dorsal</string>
+    <string name="profile_edad">Edad</string>
 </resources>
