@@ -11,4 +11,23 @@
     <string name="profile_convocado">Convocado</string>
     <string name="profile_titular">Titular</string>
     <string name="profile_edad">Edad</string>
+    <string name="nombre_equipo">Villaviciosa de Odón C.F.</string>
+    <!-- HOME -->
+    <string name="H_proxPartido">Próximo Partido</string>
+    <string name="H_local">Local</string>
+    <string name="H_visitante">Visitante</string>
+    <string name="H_verDetallles">Ver Detalles</string>
+    <string name="H_partido">Partido</string>
+    <string name="H_partidosJugados">Jugados</string>
+    <string name="H_partidosEmpatados">Empatados</string>
+    <string name="H_partidosPerdidos">Perdidos</string>
+    <string name="H_partidosGanados">Ganados</string>
+    <string name="H_a">A</string>
+    <string name="H_posicion">Posicion</string>
+    <string name="H_pts">pts.</string>
+    <string name="H_dLider">1º:</string>
+    <string name="H_proximosEventos">Ver proximos eventos</string>
+    <string name="H_gestion">Gestion</string>
+    <string name="H_clasificacion">Clasificacion</string>
+    <string name="title_activity_detalles_partido">Map</string>
 </resources>
