@@ -89,11 +89,11 @@ public class DetallePartido extends AppCompatActivity implements OnMapReadyCallb
     }
 
     @Override
-    public void devolverCampo(DetalleEquipo dataEquipo) {
+    public void devolverCampo(DatosPartido dataPartido) {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                String localizacionCampo = dataEquipo.getCampo();
+                String localizacionCampo = dataPartido.getCampo();
                 sacarLatitudLongitud(localizacionCampo);
             }
         });
