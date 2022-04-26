@@ -3,6 +3,8 @@ package com.aafs.todoubt;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.drawable.Drawable;
+import android.location.Address;
+import android.location.Geocoder;
 import android.os.Build;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -10,6 +12,8 @@ import android.widget.TextView;
 
 import com.aafs.todoubt.databinding.ActivityDetallePartidoBinding;
 import com.aafs.todoubt.wsdatos.DatosPartido;
+import com.aafs.todoubt.wsdatos.DetalleEquipo;
+import com.aafs.todoubt.wsdatos.HiloPeticionDatos;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
@@ -20,7 +24,11 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class DetallePartido extends AppCompatActivity implements OnMapReadyCallback {
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
+
+public class DetallePartido extends AppCompatActivity implements OnMapReadyCallback, HiloPeticionDatos.InterfazDatos2 {
     private GoogleMap mMap;
     private ActivityDetallePartidoBinding binding;
     private DatosPartido data;
@@ -78,9 +86,35 @@ public class DetallePartido extends AppCompatActivity implements OnMapReadyCallb
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+    }
+
+    @Override
+    public void devolverCampo(DetalleEquipo dataEquipo) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                String localizacionCampo = dataEquipo.getCampo();
+                sacarLatitudLongitud(localizacionCampo);
+            }
+        });
+    }
+
+    private void sacarLatitudLongitud(String localizacionCampo) {
+        Geocoder geocoder = new Geocoder(getApplicationContext(), Locale.getDefault());
+        List<Address> addresses = null;
+        try {
+            addresses = geocoder.getFromLocationName(localizacionCampo,1);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        double latitud = addresses.get(0).getLatitude();
+        double longitud = addresses.get(0).getLongitude();
+        dibujarCampo(latitud,longitud);
+    }
+
+    private void dibujarCampo(double latitud, double longitud) {
+        LatLng campo = new LatLng(latitud, longitud);
+        mMap.addMarker(new MarkerOptions().position(campo).title("Campo"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(campo));
     }
 }

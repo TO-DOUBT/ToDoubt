@@ -29,6 +29,6 @@ public class HiloPeticionDatos implements Runnable {
         public void devolverDatosPartido(List<DatosPartido> data);
     }
     public interface InterfazDatos2 {
-
+        public void devolverCampo(DetalleEquipo dataEquipo);
     }
 }
