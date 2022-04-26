@@ -1,14 +1,19 @@
 package com.aafs.todoubt.wsdatos;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DatosPartido implements Serializable {
     private String equipoLocal, equipoVisitante;
     private String resultado;
     private String fecha, actaPartido, jornada;
     private String logoLocal, logoVisitante;
+    private List<String> goles;
+    private String campo;
 
     public DatosPartido() {
+        this.goles = new ArrayList<>();
     }
 
     public String getEquipoLocal() {
@@ -73,5 +78,21 @@ public class DatosPartido implements Serializable {
 
     public void setResultado(String resultado) {
         this.resultado = resultado;
+    }
+
+    public List<String> getGoles() {
+        return goles;
+    }
+
+    public void setGoles(List<String> goles) {
+        this.goles = goles;
+    }
+
+    public String getCampo() {
+        return campo;
+    }
+
+    public void setCampo(String campo) {
+        this.campo = campo;
     }
 }

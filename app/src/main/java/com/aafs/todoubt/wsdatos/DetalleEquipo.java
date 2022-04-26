@@ -5,8 +5,6 @@ import java.util.List;
 
 public class DetalleEquipo {
 
-    private String campo;
-
     private List<DatosJugador> jugadoresEquipo;
 
     public DetalleEquipo() {
@@ -21,11 +19,5 @@ public class DetalleEquipo {
         this.jugadoresEquipo = jugadoresEquipo;
     }
 
-    public String getCampo() {
-        return campo;
-    }
 
-    public void setCampo(String campo) {
-        this.campo = campo;
-    }
 }

@@ -30,6 +30,10 @@ public class HiloPeticionDatos implements Runnable {
         PeticionDatos.conectar4(c.getJugadoresEquipo().get(3).getLinkJugador()); // link de un jugador que esta en la lista
         DatosJugador d = PeticionDatos.pedirDatosJugador(c.getJugadoresEquipo().get(3)); // estadisticas del jugador en cuestion
 
+        // LLamar desde otro lado para ver las actas de los diferentes partidos
+        PeticionDatos.conectar4(b.get(4).getActaPartido());
+        PeticionDatos.pedirGoles(b.get(4));
+
         Log.d("TAG", "run: " + a.getPosicion());
     }
     public interface InterfazDatos {

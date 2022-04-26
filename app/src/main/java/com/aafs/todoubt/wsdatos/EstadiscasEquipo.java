@@ -1,12 +1,19 @@
 package com.aafs.todoubt.wsdatos;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class EstadiscasEquipo {
 
     private String nombreEquipo, lider, linkDetalle;
     private int partidosJugados, partidosEmpatados, partidosPerdidos, partidosGanados,
             posicion, puntos_lider, puntos;
 
-    public EstadiscasEquipo(){}
+    private List<String> clasificacion;
+
+    public EstadiscasEquipo(){
+        this.clasificacion = new ArrayList<>();
+    }
 
     public String getNombreEquipo() {
         return nombreEquipo;
@@ -86,5 +93,13 @@ public class EstadiscasEquipo {
 
     public void setLinkDetalle(String linkDetalle) {
         this.linkDetalle = linkDetalle;
+    }
+
+    public List<String> getClasificacion() {
+        return clasificacion;
+    }
+
+    public void setClasificacion(List<String> clasificacion) {
+        this.clasificacion = clasificacion;
     }
 }

@@ -20,7 +20,9 @@ public class PeticionDatos {
     private static DetalleEquipo c;
     private static DatosJugador d;
 
-
+    /**
+     * Conecta con la pagina de la Clasificacion
+     */
     public static void conectar1() {
         try {
             a = new EstadiscasEquipo();
@@ -31,6 +33,10 @@ public class PeticionDatos {
             e.printStackTrace();
         }
     }
+
+    /**
+     * Conecta con el caldendario
+     */
     public static void conectar2() {
         try {
             b = new ArrayList<>();
@@ -39,6 +45,10 @@ public class PeticionDatos {
             e.printStackTrace();
         }
     }
+
+    /**
+     *  Conecta con la Pagina de detalles del equipo
+     */
     public static void conectar3() {
         try {
             doc = Jsoup.connect(a.getLinkDetalle()).get();
@@ -46,6 +56,11 @@ public class PeticionDatos {
             e.printStackTrace();
         }
     }
+
+    /**
+     *  Conecta con la Página "personal" del Jugador o Acta de un partido
+     * @param link
+     */
     public static void conectar4(String link) {
         try {
             doc = Jsoup.connect(link).get();
@@ -53,6 +68,7 @@ public class PeticionDatos {
             e.printStackTrace();
         }
     }
+
     public static EstadiscasEquipo pedirDatos() {
         int contador = 0;
         int lider = 0;
@@ -75,6 +91,7 @@ public class PeticionDatos {
                     a.setLinkDetalle(headline.child(0).child(1).child(1).child(0).child(0).attr("href"));
                    contador++;
                }
+               a.getClasificacion().add(headline.child(0).child(1).child(1).text());
             }
         }
         return a;
@@ -117,8 +134,6 @@ public class PeticionDatos {
 
             }
         }
-        Element el = doc.getElementsByClass("nombre-campo").get(0);
-        c.setCampo(el.child(0).text());
         return c;
     }
     public static DatosJugador pedirDatosJugador(DatosJugador jug){
@@ -151,6 +166,14 @@ public class PeticionDatos {
         Element el = newsHeadlines.get(0);
         jug.setTarjetasAmarillas((el.child(0).child(1).child(0).text()));
         jug.setTarjetasRojas(el.child(1).child(1).child(0).text());
+    }
+
+    public static DatosPartido pedirGoles (DatosPartido part){
+        Elements newsHeadlines = doc.getElementsByClass("table-row-item goles-cronologicos");
+        for (Element headline : newsHeadlines) {
+            part.getGoles().add(headline.child(1).text() + ";" + headline.child(2).text() );
+        }
+        return part;
     }
 
 
