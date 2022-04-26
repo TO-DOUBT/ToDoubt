@@ -22,13 +22,18 @@ public class HiloPeticionDatos implements Runnable {
         PeticionDatos.conectar2();
         List<DatosPartido> b = PeticionDatos.pedirDatosPartido();
         context.devolverDatosPartido(b);
+
+        PeticionDatos.conectar3();
+        DetalleEquipo c = PeticionDatos.pedirDatosPlantilla();
+
+        // LLamar desde el perfil del jugador, No va aqui.
+        PeticionDatos.conectar4(c.getJugadoresEquipo().get(3).getLinkJugador()); // link de un jugador que esta en la lista
+        DatosJugador d = PeticionDatos.pedirDatosJugador(c.getJugadoresEquipo().get(3)); // estadisticas del jugador en cuestion
+
         Log.d("TAG", "run: " + a.getPosicion());
     }
     public interface InterfazDatos {
         public void devolverDatos(EstadiscasEquipo data);
         public void devolverDatosPartido(List<DatosPartido> data);
-    }
-    public interface InterfazDatos2 {
-
     }
 }

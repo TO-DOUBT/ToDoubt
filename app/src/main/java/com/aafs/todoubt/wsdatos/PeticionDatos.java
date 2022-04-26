@@ -72,7 +72,7 @@ public class PeticionDatos {
                     a.setPartidosPerdidos(Integer.parseInt(headline.child(5).child(0).text()));
                     a.setPuntos(Integer.parseInt(headline.child(1).child(0).text()));
                     a.setPosicion(Integer.parseInt(headline.child(0).child(0).text()));
-                    a.setLinkDetalle(headline.child(0).child(1).child(1).attr("href"));
+                    a.setLinkDetalle(headline.child(0).child(1).child(1).child(0).child(0).attr("href"));
                    contador++;
                }
             }
@@ -105,28 +105,52 @@ public class PeticionDatos {
     }
     public static DetalleEquipo pedirDatosPlantilla(){
         c = new DetalleEquipo();
-        c.getJugadoresEquipo();
         DatosJugador aux;
         Elements newsHeadlines = doc.getElementsByClass("table-row");
         for (Element headline : newsHeadlines) {
-           aux = new DatosJugador();
-           aux.setLinkJugador(headline.child(0).child(0).attr("href"));
-           aux.setNombreCompleto(headline.child(0).child(0).text());
-           c.getJugadoresEquipo().add(aux);
+            try {
+                aux = new DatosJugador();
+                aux.setLinkJugador(headline.child(0).child(0).child(0).attr("href"));
+                aux.setNombreCompleto(headline.child(0).child(0).text());
+                c.getJugadoresEquipo().add(aux);
+            }catch (Exception e){
+
+            }
         }
-        Element el = doc.getElementById("nombre-campo");
+        Element el = doc.getElementsByClass("nombre-campo").get(0);
         c.setCampo(el.child(0).text());
         return c;
     }
-    public static DatosJugador pedirDatosJugador(){
-        Elements newsHeadlines = doc.getElementsByClass("table-row");
-        for (Element headline : newsHeadlines) {
-
+    public static DatosJugador pedirDatosJugador(DatosJugador jug){
+        datoJugador1(jug);
+        datoJugador2(jug);
+        datoJugador3(jug);
+        return jug;
+    }
+    public static void datoJugador1 (DatosJugador jug){
+        int i = 0;
+        Element headline = doc.getElementsByClass("ficha-equipo-container").get(1);
+        if (i == 0){
+            jug.setCodigoJugador(Integer.parseInt(headline.child(2).child(1).text()));
+            jug.setEdad(headline.child(1).child(1).text());
+            i++;
         }
-        Element el = doc.getElementById("nombre-campo");
-        c.setCampo(el.child(0).text());
-
-        return d;
+    }
+    public static void datoJugador2 (DatosJugador jug){
+        Elements newsHeadlines = doc.getElementsByClass("widget-simple-stat");
+        Element el = newsHeadlines.get(0);
+        jug.setPartidosConvocados(el.child(0).child(0).child(1).text());
+        jug.setPartidosJugados(el.child(0).child(1).child(1).text());
+        jug.setPartidosSuplente(el.child(0).child(2).child(1).text());
+        jug.setPartidosTitular(el.child(0).child(3).child(1).text());
+        el = newsHeadlines.get(1);
+        jug.setGoles(el.child(0).child(0).child(1).text());
+    }
+    public static void datoJugador3 (DatosJugador jug){
+        Elements newsHeadlines = doc.getElementsByClass("medal-list");
+        Element el = newsHeadlines.get(0);
+        jug.setTarjetasAmarillas((el.child(0).child(1).child(0).text()));
+        jug.setTarjetasRojas(el.child(1).child(1).child(0).text());
     }
 
 

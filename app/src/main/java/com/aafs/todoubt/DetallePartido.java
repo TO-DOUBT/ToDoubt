@@ -20,9 +20,9 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class DetallePartido extends AppCompatActivity implements OnMapReadyCallback {
+public class DetallePartido extends AppCompatActivity /*implements OnMapReadyCallback*/ {
     private GoogleMap mMap;
-    private ActivityDetallePartidoBinding binding;
+    //private ActivityDetallePartidoBinding binding;
     private DatosPartido data;
     private ImageView imagenLocal, imagenVisitante;
     private TextView equipoLocal, equipoVisitante, resultado;
@@ -43,9 +43,9 @@ public class DetallePartido extends AppCompatActivity implements OnMapReadyCallb
 
 
         // Mapa
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+        /*SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.dp_Mapa);
-        mapFragment.getMapAsync(this);
+        mapFragment.getMapAsync(this);*/
 
         // Datos
         Glide.with(DetallePartido.this).load(data.getLogoLocal())
@@ -75,12 +75,12 @@ public class DetallePartido extends AppCompatActivity implements OnMapReadyCallb
 
     }
 
-    @Override
+    /*@Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         // Add a marker in Sydney and move the camera
         LatLng sydney = new LatLng(-34, 151);
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
-    }
+    }*/
 }

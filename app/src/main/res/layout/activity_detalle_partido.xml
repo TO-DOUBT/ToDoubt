@@ -168,7 +168,7 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_end="247dp" />
 
-    <androidx.cardview.widget.CardView
+    <!--<androidx.cardview.widget.CardView
         android:id="@+id/dp_CV_mapa"
         style="@style/Base.CardView"
         android:layout_width="0dp"
@@ -185,6 +185,6 @@
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"  />
-    </androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

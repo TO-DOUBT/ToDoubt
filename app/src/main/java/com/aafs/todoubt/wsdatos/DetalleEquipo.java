@@ -1,5 +1,6 @@
 package com.aafs.todoubt.wsdatos;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DetalleEquipo {
@@ -9,6 +10,7 @@ public class DetalleEquipo {
     private List<DatosJugador> jugadoresEquipo;
 
     public DetalleEquipo() {
+        jugadoresEquipo = new ArrayList<>();
     }
 
     public List<DatosJugador> getJugadoresEquipo() {
