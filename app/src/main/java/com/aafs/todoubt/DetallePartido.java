@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.aafs.todoubt.databinding.ActivityDetallePartidoBinding;
 import com.aafs.todoubt.wsdatos.DatosPartido;
 import com.aafs.todoubt.wsdatos.DetalleEquipo;
+import com.aafs.todoubt.wsdatos.HiloPeticionActa;
 import com.aafs.todoubt.wsdatos.HiloPeticionDatos;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.SimpleTarget;
@@ -28,7 +29,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
-public class DetallePartido extends AppCompatActivity implements OnMapReadyCallback, HiloPeticionDatos.InterfazDatos2 {
+public class DetallePartido extends AppCompatActivity implements OnMapReadyCallback, HiloPeticionActa.InterfazDatos {
     private GoogleMap mMap;
     private ActivityDetallePartidoBinding binding;
     private DatosPartido data;
@@ -48,7 +49,9 @@ public class DetallePartido extends AppCompatActivity implements OnMapReadyCallb
 
         // Intents
         data = (DatosPartido) getIntent().getSerializableExtra("partido");
-
+        HiloPeticionActa h = new HiloPeticionActa(DetallePartido.this, data);
+        Thread t = new Thread(h);
+        t.start();
 
         // Mapa
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -100,10 +103,10 @@ public class DetallePartido extends AppCompatActivity implements OnMapReadyCallb
     }
 
     private void sacarLatitudLongitud(String localizacionCampo) {
-        Geocoder geocoder = new Geocoder(getApplicationContext(), Locale.getDefault());
+        Geocoder geocoder = new Geocoder(DetallePartido.this, Locale.getDefault());
         List<Address> addresses = null;
         try {
-            addresses = geocoder.getFromLocationName(localizacionCampo,1);
+            addresses = geocoder.getFromLocationName(localizacionCampo.replaceAll("[^a-zA-Z]+",""),1);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -115,6 +118,7 @@ public class DetallePartido extends AppCompatActivity implements OnMapReadyCallb
     private void dibujarCampo(double latitud, double longitud) {
         LatLng campo = new LatLng(latitud, longitud);
         mMap.addMarker(new MarkerOptions().position(campo).title("Campo"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(campo));
+        float zoomLevel = 16.0f; //This goes up to 21
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(campo, zoomLevel));
     }
 }
