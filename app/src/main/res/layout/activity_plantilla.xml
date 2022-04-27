@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".PlantillaActivity">
 
+
     <androidx.appcompat.widget.SearchView
         android:id="@+id/buscador_plantilla"
         android:layout_width="370dp"
@@ -69,7 +70,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView_jugadores_plantilla"
         android:layout_width="370dp"
-        android:layout_height="250dp"
+        android:layout_height="280dp"
         android:layout_marginTop="25dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="5dp"
@@ -89,62 +90,99 @@
             android:background="@drawable/list_background"
              />
 
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/coordinatorLayout"
+            android:layout_width="match_parent"
+            android:layout_height="450dp">
+
+            <FrameLayout
+
+                android:id="@+id/standard_bottom_sheet"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+
+            </FrameLayout>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
     </androidx.cardview.widget.CardView>
 
-    <LinearLayout
+
+    <!--<LinearLayout
         android:id="@+id/linear_botones_plantilla"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideLineEnd"
+        app:layout_constraintEnd_toEndOf="@+id/guideLineEnd"
 
         app:layout_constraintStart_toStartOf="@+id/guideLineStart"
         app:layout_constraintTop_toBottomOf="@+id/cardView_jugadores_plantilla"
         app:layout_constraintVertical_bias="0.0">
 
 
-        <ImageView
+        <ImageButton
             android:id="@+id/img_anadir_jugador"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/img_boton_anadir_jugador" />
+            android:clickable="true"
+            android:onClick="aniadir_jugador"
+            android:background="@drawable/img_boton_anadir_jugador" />
 
-        <ImageView
+
+
+        <ImageButton
             android:id="@+id/img_modificar_jugador"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            app:srcCompat="@drawable/img_boton_modificar_jugador" />
-
-        <!--<br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
-      android:id="@+id/btn_anadir_jugador_plantilla"
-      android:layout_width="147dp"
-      android:layout_height="40.5dp"
-
-      android:background="@drawable/button_img_1"
-      android:fontFamily="@font/actor"
-      android:text="Añadir jugador"
-      android:textAllCaps="false"
-      android:textColor="@color/white"
-      android:textSize="15dp" />
+            app:srcCompat="@drawable/img_boton_modificar_jugador"
+            android:padding="0dp"/>
 
 
-  <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
-      android:id="@+id/btn_modificar_jugador_plantilla"
-      android:layout_width="147dp"
-      android:layout_height="40.5dp"
-      android:layout_marginStart="20dp"
 
-      android:background="@drawable/button_img_2"
-      android:fontFamily="@font/actor"
-      android:text="Modifiar jugador"
-      android:textAllCaps="false"
-      android:textColor="@color/white"
-      android:textSize="15dp" />-->
+    </LinearLayout>-->
 
 
-    </LinearLayout>
+    <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
+        android:id="@+id/btn_aniadir_jugador_plantilla"
+        android:layout_marginTop="24dp"
+        style="@style/plantilla_button_aniadir_jugador"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:fontFamily="@font/actor"
+        android:drawableLeft="@drawable/ic_add"
+        android:gravity="center"
+        android:drawablePadding="5dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_modificar_jugador_plantilla"
+        app:layout_constraintStart_toEndOf="@+id/guideLineStart"
+        app:layout_constraintTop_toBottomOf="@+id/cardView_jugadores_plantilla" />
+
+    <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
+        android:id="@+id/btn_modificar_jugador_plantilla"
+        android:layout_marginTop="24dp"
+        style="@style/plantilla_button_modificar_jugador"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:fontFamily="@font/actor"
+        android:drawableLeft="@drawable/ic_pencil"
+        android:gravity="center"
+        android:drawablePadding="5dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/guideLineEnd"
+        app:layout_constraintStart_toEndOf="@+id/btn_aniadir_jugador_plantilla"
+        app:layout_constraintTop_toBottomOf="@+id/cardView_jugadores_plantilla" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideLineStart"
@@ -165,8 +203,6 @@
         app:layout_constraintGuide_percent="0.95"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,11 +6,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
+        android:id="@+id/linear_contorno_fila_jugador_plantilla"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:padding="1dp"
+        android:background="@drawable/estilo_fila_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    <LinearLayout
         android:id="@+id/linear_fila_jugador_plantilla"
         android:layout_width="350dp"
         android:layout_height="40dp"
         android:layout_margin="0dp"
-        android:background="@drawable/estilo_fila_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -44,6 +52,6 @@
 
             />
     </LinearLayout>
-
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

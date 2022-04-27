@@ -1,20 +1,17 @@
 package com.aafs.todoubt;
 
-import android.widget.LinearLayout;
-
 public class ListElement {
 
     public String nombreJugador;
     public String dorsalJugador;
-    //public String filaJugador;
 
     //Constructor
 
 
-    public ListElement(String nombreJugador, String dorsalJugador/*, String filaJugador*/) {
+    public ListElement(String nombreJugador, String dorsalJugador) {
         this.nombreJugador = nombreJugador;
         this.dorsalJugador = dorsalJugador;
-       // this.filaJugador = filaJugador;
+
     }
 
     //Getter y Setter
@@ -34,11 +31,5 @@ public class ListElement {
         this.dorsalJugador = dorsalJugador;
     }
 
-    /*public String getFilaJugador() {
-        return filaJugador;
-    }
 
-    public void setFilaJugador(String filaJugador) {
-        this.filaJugador = filaJugador;
-    }*/
 }

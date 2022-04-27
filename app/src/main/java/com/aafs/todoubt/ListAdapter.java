@@ -36,7 +36,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.RecyclerHolder
         fila_jugadores = view.findViewById(R.id.linear_fila_jugador_plantilla);
 
         //Filas del RecyclerView: Anchura
-        int miHeight = 100;
+        int miHeight = 120;
         view.getLayoutParams().height = miHeight;
         contador++;
 
@@ -64,7 +64,9 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.RecyclerHolder
     }
 
     public void filter(String strSearch){
-        if(strSearch.length() == 0){
+        String strSearchLowerCase = strSearch.toLowerCase();
+
+        if(strSearchLowerCase.length() == 0){
             items.clear();
             items.addAll(originalItems);
         }
@@ -72,14 +74,14 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.RecyclerHolder
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N){
                 items.clear();
                 List<ListElement> collect = originalItems.stream()
-                        .filter(i -> i.getNombreJugador().toLowerCase().contains(strSearch))
+                        .filter(i -> i.getNombreJugador().toLowerCase().contains(strSearchLowerCase))
                         .collect(Collectors.toList());
 
                 items.addAll(collect);
             }
             else {
                 for (ListElement i : originalItems) {
-                    if (i.getNombreJugador().toLowerCase().contains(strSearch)){
+                    if (i.getNombreJugador().toLowerCase().contains(strSearchLowerCase)){
                         items.add(i);
                     }
 

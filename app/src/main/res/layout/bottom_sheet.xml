@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottomSheetContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bottom_sheet_background"
+    android:orientation="vertical"
+    android:paddingTop="50dp"
+    android:paddingBottom="50dp">
+
+    <TextView
+        android:id="@+id/txt_titulo_aniadir_jugador"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/actor"
+        android:text="Añadir Jugadores"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="19dp"
+
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/guideLineEnd"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/guideLineStart"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/txt_nombre_completo_jugador"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Nombre Completo"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:fontFamily="@font/actor"
+        app:layout_constraintEnd_toStartOf="@+id/guideLineEnd"
+        app:layout_constraintHorizontal_bias="0.074"
+        app:layout_constraintStart_toStartOf="@+id/guideLineStart"
+        app:layout_constraintTop_toBottomOf="@+id/txt_titulo_aniadir_jugador">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/et_nombre_Completo_plantilla"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#1A000000"
+        android:hint="Nombre Completo"
+        android:textColor="@color/orange_detail"
+        android:padding="10dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:paddingStart="10dp"
+        android:textColorHint="@color/orange_detail_light"
+        android:maxLines="1"
+        android:textSize="13dp"
+        android:inputType="text"
+        android:fontFamily="@font/actor"
+
+         app:layout_constraintEnd_toEndOf="@id/guideLineEnd"
+         app:layout_constraintHorizontal_bias="0.0"
+         app:layout_constraintStart_toStartOf="@id/guideLineStart"
+         app:layout_constraintTop_toBottomOf="@id/txt_nombre_completo_jugador" />
+
+    <TextView
+        android:id="@+id/txt_dorsal_jugador"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Dorsal"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:fontFamily="@font/actor"
+        app:layout_constraintEnd_toStartOf="@+id/guideLineEnd"
+        app:layout_constraintHorizontal_bias="0.074"
+        app:layout_constraintStart_toStartOf="@+id/guideLineStart"
+        app:layout_constraintTop_toBottomOf="@+id/et_nombre_Completo_plantilla">
+
+    </TextView>
+
+        <EditText
+            android:id="@+id/et_dorsal_plantilla"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="#1A000000"
+            android:hint="Dorsal"
+            android:textColor="@color/orange_detail_light"
+            android:padding="10dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:paddingStart="10dp"
+            android:textColorHint="@color/orange_detail"
+            android:maxLines="1"
+            android:textSize="13dp"
+            android:inputType="text"
+            android:fontFamily="@font/actor"
+
+            app:layout_constraintEnd_toEndOf="@id/guideLineEnd"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/guideLineStart"
+            app:layout_constraintTop_toBottomOf="@id/txt_dorsal_jugador"/>
+
+        <!--<br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
+            android:id="@+id/btn_Aceptar_aniadir_jugador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/bigger_button_background"
+            android:fontFamily="@font/actor"
+            android:text="Aceptar"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+
+
+            />-->
+        <Button
+            android:id="@+id/btn_aceptar_aniadir_jugador"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="50dp"
+            style="@style/bottotn_sheet_Plantilla_btn"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:fontFamily="@font/actor"
+
+
+            app:layout_constraintEnd_toEndOf="@id/guideLineEnd_btn"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/guideLineStart_btn"
+            app:layout_constraintTop_toBottomOf="@id/et_dorsal_plantilla"
+            />
+
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLineStart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLineEnd"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLineStart_btn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.35"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLineEnd_btn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.59"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
