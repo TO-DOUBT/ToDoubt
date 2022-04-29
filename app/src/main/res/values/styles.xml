@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="viewParent">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="loginButton" parent="viewParent">
+        <item name="android:text">Aceptar</item>
+        <item name="android:background">@drawable/bigger_button_background</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="bottotn_sheet_Plantilla_btn" parent="viewParent">
+        <item name="android:text">Aceptar</item>
+        <item name="android:background">@drawable/smaller_button_background</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="plantilla_button_aniadir_jugador" parent="viewParent">
+        <item name="android:text">Añadir Jugador</item>
+        <item name="android:background">@drawable/btn_background_plantilla</item>
+    </style>
+    <style name="plantilla_button_modificar_jugador" parent="viewParent">
+        <item name="android:text">Modificar Jugador</item>
+        <item name="android:background">@drawable/btn_background_plantilla</item>
+    </style>
+</resources>

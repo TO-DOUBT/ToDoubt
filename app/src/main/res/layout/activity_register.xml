@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity">
+
+    <ImageView
+        android:id="@+id/img_fondo_registro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/img_register" />
+
+
+    <!--Oscurecer Fondo-->
+
+    <View
+        android:id="@+id/blackScreen_registro"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/scrim_splash"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/txt_titulo_registro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/actor"
+        android:text="Regístrate"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.12" />
+
+
+    <EditText
+        android:id="@+id/campo_registro_nombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:background="#38ffffff"
+        android:hint="Nombre"
+        android:textColor="@color/white"
+        android:padding="10dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:paddingStart="10dp"
+        android:textColorHint="@color/white"
+        android:maxLines="1"
+        android:textSize="15dp"
+        android:inputType="text"
+        android:fontFamily="@font/actor"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_titulo_registro" />
+
+    <EditText
+        android:id="@+id/campo_registro_contrasena"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="40dp"
+        android:background="#38ffffff"
+        android:hint="Contraseña"
+        android:textColor="@color/white"
+        android:maxLines="1"
+        android:padding="10dp"
+        android:paddingStart="10dp"
+        android:textColorHint="@color/white"
+        android:textSize="15dp"
+        android:inputType="textPassword"
+        android:fontFamily="@font/actor"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/campo_registro_nombre" />
+
+    <EditText
+        android:id="@+id/campo_registro_gmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="40dp"
+        android:background="#38ffffff"
+        android:hint="Gmail"
+        android:textColor="@color/white"
+        android:maxLines="1"
+        android:padding="10dp"
+        android:paddingStart="10dp"
+        android:textColorHint="@color/white"
+        android:textSize="15dp"
+        android:inputType="textEmailAddress"
+        android:fontFamily="@font/actor"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/campo_registro_contrasena" />
+
+
+    <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
+        android:id="@+id/btn_registro_aceptar"
+        android:layout_marginTop="24dp"
+       style="@style/loginButton"
+        android:textAllCaps="false"
+        android:fontFamily="@font/actor"
+
+        app:layout_constraintBottom_toTopOf="@+id/linearLayoutCompat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/campo_registro_gmail"
+        app:layout_constraintVertical_bias="0.52" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutCompat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/marca_agua"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/actor">
+
+        <TextView
+            android:id="@+id/pregunta1_registro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¿Ya tienes una cuenta?"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/pregunta2_registro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Inicia Sesión"
+            android:textColor="@color/orange_detail" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/marca_agua"
+        android:layout_width="93dp"
+        android:layout_height="17dp"
+        android:layout_marginBottom="24dp"
+        android:src="@drawable/logo_to_doubt_w"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.911"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
