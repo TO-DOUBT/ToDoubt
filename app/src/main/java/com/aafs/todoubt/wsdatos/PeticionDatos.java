@@ -114,6 +114,7 @@ public class PeticionDatos {
                     // Acta
                     aux.setResultado(headline.child(1).child(i).child(1).child(0).child(0).text());
                     aux.setActaPartido(headline.child(1).child(i).child(1).child(0).child(1).child(0).attr("href"));
+
                 }
             }
             b.add(aux);
@@ -173,6 +174,8 @@ public class PeticionDatos {
         for (Element headline : newsHeadlines) {
             part.getGoles().add(headline.child(1).text() + ";" + headline.child(2).text() );
         }
+        Element el = doc.getElementsByClass("nombre-campo").get(0);
+        part.setCampo(el.child(0).text());
         return part;
     }
 
