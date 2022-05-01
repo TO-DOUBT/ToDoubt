@@ -10,10 +10,14 @@ public class DatosPartido implements Serializable {
     private String fecha, actaPartido, jornada;
     private String logoLocal, logoVisitante;
     private List<String> goles;
+    private List<String> alineacionLocal;
+    private List<String> alineacionVisi;
     private String campo;
 
     public DatosPartido() {
         this.goles = new ArrayList<>();
+        this.alineacionLocal = new ArrayList<>();
+        this.alineacionVisi = new ArrayList<>();
     }
 
     public String getEquipoLocal() {
@@ -94,5 +98,21 @@ public class DatosPartido implements Serializable {
 
     public void setCampo(String campo) {
         this.campo = campo;
+    }
+
+    public List<String> getAlineacionLocal() {
+        return alineacionLocal;
+    }
+
+    public void setAlineacionLocal(List<String> alineacionLocal) {
+        this.alineacionLocal = alineacionLocal;
+    }
+
+    public List<String> getAlineacionVisi() {
+        return alineacionVisi;
+    }
+
+    public void setAlineacionVisi(List<String> alineacionVisi) {
+        this.alineacionVisi = alineacionVisi;
     }
 }

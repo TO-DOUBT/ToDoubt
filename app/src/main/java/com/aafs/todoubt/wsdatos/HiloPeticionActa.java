@@ -17,10 +17,11 @@ public class HiloPeticionActa implements Runnable{
         // LLamar desde otro lado para ver las actas de los diferentes partidos
         PeticionDatos.conectar4(acta.getActaPartido());
         PeticionDatos.pedirGoles(acta);
-        context.devolverCampo(acta);
-
+        PeticionDatos.pedirAlineacionLocal(acta);
+        PeticionDatos.pedirAlineacionVisitante(acta);
+        context.devolverActa(acta);
     }
     public interface InterfazDatos {
-        public void devolverCampo(DatosPartido dataPartido);
+        public void devolverActa(DatosPartido dataPartido);
     }
 }

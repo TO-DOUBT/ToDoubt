@@ -5,15 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DetallePartido">
+
     <androidx.cardview.widget.CardView
         android:id="@+id/dp_CV_datosPartido"
-        style="@style/Base.CardView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@color/black"
+        app:cardElevation="0dp"
         app:layout_constraintBottom_toTopOf="@+id/dp_gd_5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -40,14 +40,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_end="50dp" />
+                app:layout_constraintGuide_end="48dp" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/dp_gd_7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_begin="50dp" />
+                app:layout_constraintGuide_begin="43dp" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/dp_gd_8"
@@ -96,7 +96,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:gravity="center"
-                android:text="TextView"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toTopOf="@+id/dp_gd_6"
                 app:layout_constraintEnd_toStartOf="@+id/dp_gd_9"
@@ -109,7 +109,7 @@
                 android:layout_height="0dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
-                android:text="TextView"
+                android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/dp_gd_10"
                 app:layout_constraintStart_toStartOf="@+id/dp_gd_3"
@@ -122,13 +122,23 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:gravity="end"
-                android:text="TextView"
+                android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/dp_gd_4"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="@+id/dp_gd_10"
                 app:layout_constraintTop_toTopOf="@+id/dp_gd_6"
                 app:layout_constraintVertical_bias="0.0" />
+
+            <ImageButton
+                android:id="@+id/dp_bck_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/trans"
+                app:layout_constraintBottom_toTopOf="@+id/dp_gd_7"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
@@ -152,29 +162,43 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="221dp" />
+        app:layout_constraintGuide_begin="209dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/dp_gd_11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="30dp" />
+        app:layout_constraintGuide_end="16dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/dp_gd_12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="247dp" />
+        app:layout_constraintGuide_end="239dp" />
+
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/orange_detail"
+        app:layout_constraintBottom_toTopOf="@+id/dp_gd_12"
+        app:layout_constraintEnd_toStartOf="@+id/dp_gd_2"
+        app:layout_constraintStart_toStartOf="@+id/dp_gd_1" />
 
     <androidx.cardview.widget.CardView
+
         android:id="@+id/dp_CV_mapa"
-        style="@style/Base.CardView"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         app:cardCornerRadius="20dp"
-        android:backgroundTint="@android:color/transparent"
+        app:cardElevation="0dp"
+
         app:layout_constraintBottom_toTopOf="@+id/dp_gd_11"
         app:layout_constraintEnd_toStartOf="@+id/dp_gd_2"
         app:layout_constraintStart_toStartOf="@+id/dp_gd_1"
@@ -184,7 +208,136 @@
             android:id="@+id/dp_Mapa"
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"  />
+            android:layout_height="match_parent" />
     </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:id="@+id/dp_scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/dp_gd_12"
+        app:layout_constraintEnd_toStartOf="@+id/dp_gd_2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/dp_gd_1"
+        app:layout_constraintTop_toTopOf="@+id/dp_gd_5"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/dp_alineacionLocal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/dp_gd_14"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/dp_alineacionVisit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:gravity="start"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/dp_gd_14"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/dp_golesVisitante"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/dp_gd_14"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+            <TextView
+                android:id="@+id/dp_golesLocal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toStartOf="@+id/dp_gd_14"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/dp_gd_14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="181dp" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Alineaciones"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@+id/dp_gd_14"
+                app:layout_constraintHorizontal_bias="0.238"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dp_golesLocal" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Goles"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@+id/dp_gd_14"
+                app:layout_constraintHorizontal_bias="0.123"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/divider4"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:background="@color/fondo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/dp_noDisp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Informacion no Disponible"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/dp_gd_12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/dp_gd_5" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
