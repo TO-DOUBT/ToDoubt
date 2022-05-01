@@ -178,6 +178,20 @@ public class PeticionDatos {
         part.setCampo(el.child(0).text());
         return part;
     }
+    public static DatosPartido pedirAlineacionLocal(DatosPartido part){
+        Element newsHeadlines = doc.getElementsByClass("acta-table-team local-team").get(0);
+        for (Element headline : newsHeadlines.children()) {
+            part.getAlineacionLocal().add(headline.child(0).child(0).child(0).text() + " - " + headline.child(0).child(1).child(0).text() );
+        }
+        return part;
+    }
+    public static DatosPartido pedirAlineacionVisitante(DatosPartido part){
+        Element newsHeadlines = doc.getElementsByClass("acta-table-team visitor-team").get(0);
+        for (Element headline : newsHeadlines.children()) {
+            part.getAlineacionVisi().add(headline.child(0).child(0).child(0).text() + " - " + headline.child(0).child(1).child(0).text() );
+        }
+        return part;
+    }
 
 
 }

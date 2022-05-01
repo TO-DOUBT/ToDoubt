@@ -7,14 +7,14 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.aafs.todoubt.databinding.ActivityDetallePartidoBinding;
 import com.aafs.todoubt.wsdatos.DatosPartido;
-import com.aafs.todoubt.wsdatos.DetalleEquipo;
 import com.aafs.todoubt.wsdatos.HiloPeticionActa;
-import com.aafs.todoubt.wsdatos.HiloPeticionDatos;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
@@ -34,7 +34,9 @@ public class DetallePartido extends AppCompatActivity implements OnMapReadyCallb
     private ActivityDetallePartidoBinding binding;
     private DatosPartido data;
     private ImageView imagenLocal, imagenVisitante;
-    private TextView equipoLocal, equipoVisitante, resultado;
+    private TextView equipoLocal, equipoVisitante, resultado, golesLocal, golesVisi, alinLocal, alinVisi, disp;
+    private ScrollView sc;
+    private ImageView back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +48,13 @@ public class DetallePartido extends AppCompatActivity implements OnMapReadyCallb
         equipoLocal = findViewById(R.id.dp_nombreLocal);
         equipoVisitante = findViewById(R.id.dp_nombreVisitante);
         resultado = findViewById(R.id.dp_resultado);
-
+        golesLocal= findViewById(R.id.dp_golesLocal);
+        golesVisi= findViewById(R.id.dp_golesVisitante);
+        alinLocal= findViewById(R.id.dp_alineacionLocal);
+        alinVisi= findViewById(R.id.dp_alineacionVisit);
+        sc = findViewById(R.id.dp_scrollView2);
+        disp = findViewById(R.id.dp_noDisp);
+        back = findViewById(R.id.dp_bck_button);
         // Intents
         data = (DatosPartido) getIntent().getSerializableExtra("partido");
         HiloPeticionActa h = new HiloPeticionActa(DetallePartido.this, data);
@@ -80,10 +88,13 @@ public class DetallePartido extends AppCompatActivity implements OnMapReadyCallb
         equipoLocal.setText(data.getEquipoLocal());
         equipoVisitante.setText(data.getEquipoVisitante());
         resultado.setText(data.getResultado());
-        /**
-         * Todo: Marcador del mapa con localizacion [Geocoder] https://www.tabnine.com/code/java/classes/android.location.Geocoder
-         */
 
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
     @Override
@@ -92,12 +103,27 @@ public class DetallePartido extends AppCompatActivity implements OnMapReadyCallb
     }
 
     @Override
-    public void devolverCampo(DatosPartido dataPartido) {
+    public void devolverActa(DatosPartido dataPartido) {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 String localizacionCampo = dataPartido.getCampo();
                 sacarLatitudLongitud(localizacionCampo);
+                if (!dataPartido.getResultado().equals("-")) {
+                    String aux;
+                    aux = formatGoles(dataPartido.getGoles(), 0);
+                    golesLocal.setText(aux);
+                    aux = formatGoles(dataPartido.getGoles(), 1);
+                    golesVisi.setText(aux);
+                    aux = formatPlantilla(dataPartido.getAlineacionLocal());
+                    alinLocal.setText(aux);
+                    aux = formatPlantilla(dataPartido.getAlineacionVisi());
+                    alinVisi.setText(aux);
+                    resultado.setText(dataPartido.getResultado());
+                }else {
+                    sc.setVisibility(View.INVISIBLE);
+                    disp.setVisibility(View.VISIBLE);
+                }
             }
         });
     }
@@ -120,5 +146,27 @@ public class DetallePartido extends AppCompatActivity implements OnMapReadyCallb
         mMap.addMarker(new MarkerOptions().position(campo).title("Campo"));
         float zoomLevel = 16.0f; //This goes up to 21
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(campo, zoomLevel));
+    }
+    private String formatGoles(List<String> golesPartido, int a){
+        String ext = "";
+        String aux = "";
+        int gols, gols_au  = 0;
+        for (int i = 0 ; i< golesPartido.size() ; i++){
+            aux = golesPartido.get(i);
+            gols = Integer.parseInt(aux.split(";")[0].split("-")[a].replace(" ", ""));
+            if (gols > gols_au){
+                ext = ext + aux.split(";")[1] + "\n";
+            }
+            gols_au = gols;
+        }
+        return ext;
+    }
+    // "1 - ELIZAGA MAÑAS, IGNACIO"
+    private String formatPlantilla(List<String> plantillaEquipo){
+        String ext = "";
+        for (int i = 0 ; i< plantillaEquipo.size() ; i++){
+            ext = ext + plantillaEquipo.get(i) + "\n";
+        }
+        return ext;
     }
 }

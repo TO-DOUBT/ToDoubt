@@ -26,23 +26,20 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".Home">
-        android:theme="@style/Theme.ToDoubt">
+        <activity android:name=".Home" android:theme="@style/Theme.ToDoubt">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".PlantillaActivity"
             android:label="Plantilla"
             android:theme="@style/Theme.ToDoubt"
             android:parentActivityName=".RegisterActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
         </activity>
         <activity
             android:name=".SplashScreenActivity"
             android:theme="@style/Theme.ToDoubt.NoActionBar">
-
         </activity>
         <activity
             android:name=".RegisterActivity"
