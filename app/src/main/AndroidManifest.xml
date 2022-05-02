@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.aafs.todoubt">
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -27,10 +28,6 @@
             android:value="@string/google_maps_key" />
 
         <activity android:name=".Home" android:theme="@style/Theme.ToDoubt">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".PlantillaActivity"
             android:label="Plantilla"
@@ -43,8 +40,12 @@
         </activity>
         <activity
             android:name=".RegisterActivity"
-            android:theme="@style/Theme.ToDoubt.NoActionBar">
-
+            android:theme="@style/Theme.ToDoubt.NoActionBar"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <meta-data
