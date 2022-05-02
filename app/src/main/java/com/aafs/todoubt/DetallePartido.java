@@ -133,12 +133,14 @@ public class DetallePartido extends AppCompatActivity implements OnMapReadyCallb
         List<Address> addresses = null;
         try {
             addresses = geocoder.getFromLocationName(localizacionCampo.replaceAll("[^a-zA-Z]+",""),1);
+            double latitud = addresses.get(0).getLatitude();
+            double longitud = addresses.get(0).getLongitude();
+            dibujarCampo(latitud,longitud);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        double latitud = addresses.get(0).getLatitude();
-        double longitud = addresses.get(0).getLongitude();
-        dibujarCampo(latitud,longitud);
+
+
     }
 
     private void dibujarCampo(double latitud, double longitud) {

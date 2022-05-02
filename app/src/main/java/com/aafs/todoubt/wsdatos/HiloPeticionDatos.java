@@ -4,6 +4,7 @@ import android.util.Log;
 
 import com.aafs.todoubt.Home;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HiloPeticionDatos implements Runnable {
@@ -21,7 +22,7 @@ public class HiloPeticionDatos implements Runnable {
         context.devolverDatos(a);
 
         PeticionDatos.conectar2();
-        List<DatosPartido> b = PeticionDatos.pedirDatosPartido();
+        ArrayList<DatosPartido> b = PeticionDatos.pedirDatosPartido();
         context.devolverDatosPartido(b);
 
         PeticionDatos.conectar3();
@@ -35,7 +36,7 @@ public class HiloPeticionDatos implements Runnable {
 
     public interface InterfazDatos {
         public void devolverDatos(EstadiscasEquipo data);
-        public void devolverDatosPartido(List<DatosPartido> data);
+        public void devolverDatosPartido(ArrayList<DatosPartido> data);
     }
 
 }

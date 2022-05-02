@@ -7,14 +7,18 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.aafs.todoubt.DetallePartido;
 import com.aafs.todoubt.R;
 import com.aafs.todoubt.calendario.activitycalendario.BaseActivity;
+import com.aafs.todoubt.wsdatos.DatosPartido;
 import com.haibin.calendarview.Calendar;
 import com.haibin.calendarview.CalendarView;
 
 import com.haibin.*;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class FullActivity extends BaseActivity implements
@@ -22,15 +26,12 @@ public class FullActivity extends BaseActivity implements
         CalendarView.OnYearChangeListener,
         View.OnClickListener {
 
-    TextView mTextMonthDay;
-
-    TextView mTextYear;
-
-    TextView mTextCurrentDay;
-
+    private TextView mTextMonthDay;
+    private TextView mTextYear;
+    private TextView mTextCurrentDay;
     private int mYear;
-
-    CalendarView mCalendarView;
+    private CalendarView mCalendarView;
+    private ArrayList<DatosPartido> listaPartidos;
 
     public static void show(Context context) {
         context.startActivity(new Intent(context, FullActivity.class));
@@ -44,7 +45,6 @@ public class FullActivity extends BaseActivity implements
     @SuppressLint("SetTextI18n")
     @Override
     protected void initView() {
-
         setStatusBarDarkMode();
         mTextMonthDay = findViewById(R.id.tv_month_day);
         mTextYear = findViewById(R.id.tv_year);
@@ -71,19 +71,24 @@ public class FullActivity extends BaseActivity implements
         mYear = mCalendarView.getCurYear();
         mTextMonthDay.setText(mCalendarView.getCurMonth() + " - " + mCalendarView.getCurDay());
         mTextCurrentDay.setText(String.valueOf(mCalendarView.getCurDay()));
+
+        // Recpger Datos Intent
+        listaPartidos = (ArrayList<DatosPartido>)( getIntent().getBundleExtra("LIST").getSerializable("key"));
     }
 
     @Override
     protected void initData() {
-        int year = mCalendarView.getCurYear();
-        int month = mCalendarView.getCurMonth();
-
         //Eventos
         Map<String, Calendar> map = new HashMap<>();
-        map.put(getSchemeCalendar(year, month, 3, 0xFF40db25, "假").toString(),
-                getSchemeCalendar(year, month, 3, 0xFF40db25, "假"));
-        map.put(getSchemeCalendar(year, month, 6, 0xFFe69138, "事").toString(),
-                getSchemeCalendar(year, month, 6, 0xFFe69138, "事"));
+
+        for (DatosPartido d :listaPartidos) {
+            String año = d.getFecha().substring(d.getFecha().length()-11,d.getFecha().length()-1).split("-")[2];
+            String mes = d.getFecha().substring(d.getFecha().length()-11,d.getFecha().length()-1).split("-")[1];
+            String dia = d.getFecha().substring(d.getFecha().length()-11,d.getFecha().length()-1).split("-")[0];
+            map.put(getSchemeCalendar(Integer.parseInt(año), Integer.parseInt(mes), Integer.parseInt(dia), 0xFF40db25, d.getJornada()).toString(),
+                    getSchemeCalendar(Integer.parseInt(año), Integer.parseInt(mes), Integer.parseInt(dia), 0xFF40db25, d.getJornada()));
+        }
+
 
         mCalendarView.setSchemeDate(map);
     }
@@ -96,8 +101,6 @@ public class FullActivity extends BaseActivity implements
         calendar.setSchemeColor(color);
         calendar.setScheme(text);
         calendar.addScheme(color, "");
-        calendar.addScheme(day%2 == 0 ? 0xFF00CD00 : 0xFFD15FEE, "");
-        calendar.addScheme(day%2 == 0 ? 0xFF660000 : 0xFF4169E1, "");
         return calendar;
     }
 
@@ -123,6 +126,14 @@ public class FullActivity extends BaseActivity implements
                 "  --  " + calendar.getMonth() +
                 "  -- " + calendar.getDay() +
                 "  --  " + isClick + "  --   " + calendar.getScheme());
+        for (DatosPartido d : listaPartidos) {
+            if (calendar.getScheme() != null && calendar.getScheme().equals(d.getJornada())){
+                Intent i = new Intent(FullActivity.this, DetallePartido.class);
+                i.putExtra("partido", d);
+                startActivity(i);
+            }
+        }
+
     }
 
     @Override

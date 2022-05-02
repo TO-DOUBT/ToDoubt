@@ -13,6 +13,7 @@ import com.aafs.todoubt.wsdatos.EstadiscasEquipo;
 import com.aafs.todoubt.wsdatos.DatosPartido;
 import com.aafs.todoubt.wsdatos.HiloPeticionDatos;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Home extends AppCompatActivity implements HiloPeticionDatos.InterfazDatos {
@@ -71,7 +72,7 @@ public class Home extends AppCompatActivity implements HiloPeticionDatos.Interfa
     }
 
     @Override
-    public void devolverDatosPartido(List<DatosPartido> data) {
+    public void devolverDatosPartido(ArrayList<DatosPartido> data) {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -92,6 +93,16 @@ public class Home extends AppCompatActivity implements HiloPeticionDatos.Interfa
                     public void onClick(View v) {
                         Intent i = new Intent(Home.this, DetallePartido.class);
                         i.putExtra("partido", prox_partido);
+                        startActivity(i);
+                    }
+                });
+                CV_calendario.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent i = new Intent(Home.this, FullActivity.class);
+                        Bundle b = new Bundle();
+                        b.putSerializable("key", data);
+                        i.putExtra("LIST", b);
                         startActivity(i);
                     }
                 });

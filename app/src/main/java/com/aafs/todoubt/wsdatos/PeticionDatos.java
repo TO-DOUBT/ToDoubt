@@ -96,7 +96,7 @@ public class PeticionDatos {
         }
         return a;
     }
-    public static List<DatosPartido> pedirDatosPartido(){
+    public static ArrayList<DatosPartido> pedirDatosPartido(){
         Elements newsHeadlines = doc.getElementsByClass("table matches session calendario");
         for (Element headline : newsHeadlines) {
             aux = new DatosPartido();
@@ -119,7 +119,7 @@ public class PeticionDatos {
             }
             b.add(aux);
         }
-        return b;
+        return (ArrayList<DatosPartido>) b;
     }
     public static DetalleEquipo pedirDatosPlantilla(){
         c = new DetalleEquipo();
