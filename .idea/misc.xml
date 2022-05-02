@@ -3,11 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Universidad/Apps/ToDoubt/app/src/main/res/drawable/bg_ripple.xml" value="0.194" />
         <entry key="..\:/Universidad/Apps/ToDoubt/app/src/main/res/drawable/cardview_shape.xml" value="0.3635" />
         <entry key="..\:/Universidad/Apps/ToDoubt/app/src/main/res/drawable/ic_baseline_arrow_back_ios_new_24.xml" value="0.3635" />
-        <entry key="..\:/Universidad/Apps/ToDoubt/app/src/main/res/layout/activity_detalle_partido.xml" value="0.33" />
-        <entry key="..\:/Universidad/Apps/ToDoubt/app/src/main/res/layout/activity_home.xml" value="0.1608108108108108" />
+        <entry key="..\:/Universidad/Apps/ToDoubt/app/src/main/res/layout/activity_calendario.xml" value="0.31351351351351353" />
+        <entry key="..\:/Universidad/Apps/ToDoubt/app/src/main/res/layout/activity_detalle_partido.xml" value="0.15" />
+        <entry key="..\:/Universidad/Apps/ToDoubt/app/src/main/res/layout/activity_home.xml" value="0.33" />
+        <entry key="..\:/Universidad/Apps/ToDoubt/app/src/main/res/layout/activity_plantilla.xml" value="0.15945945945945947" />
+        <entry key="..\:/Universidad/Apps/ToDoubt/app/src/main/res/layout/activity_profile.xml" value="0.15945945945945947" />
         <entry key="..\:/Universidad/Apps/ToDoubt/app/src/main/res/layout/activity_register.xml" value="0.1608108108108108" />
+        <entry key="..\:/Universidad/Apps/ToDoubt/app/src/main/res/layout/activity_splash_screen.xml" value="0.15945945945945947" />
+        <entry key="..\:/Universidad/Apps/ToDoubt/app/src/main/res/layout/bottom_sheet.xml" value="0.15945945945945947" />
+        <entry key="..\:/Universidad/Apps/ToDoubt/app/src/main/res/layout/layout_dia_calendario.xml" value="0.2" />
       </map>
     </option>
   </component>
