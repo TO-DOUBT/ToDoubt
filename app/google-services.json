@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "604364731773",
+    "firebase_url": "https://to-doubt-default-rtdb.firebaseio.com",
+    "project_id": "to-doubt",
+    "storage_bucket": "to-doubt.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:604364731773:android:af2c7f60100d6ec5b8c814",
+        "android_client_info": {
+          "package_name": "com.aafs.todoubt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "604364731773-gfaquq05u3lclff26veu37cvo03po65h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcjai7GMJJ_6xYpm4Jezcjf9IxjhJQdWM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "604364731773-gfaquq05u3lclff26veu37cvo03po65h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
