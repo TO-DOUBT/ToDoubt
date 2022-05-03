@@ -29,7 +29,7 @@ public class PlantillaActivity extends AppCompatActivity implements SearchView.O
     private RecyclerView recyclerView;
     private List<DatosJugador> items;
     private SearchView buscador_plantilla_jugadores;
-    private Button btn_aniadir_jugador;
+    //private Button btn_aniadir_jugador;
     private DetalleEquipo plantilla;
     private ImageButton bck_btn;
 
@@ -39,12 +39,12 @@ public class PlantillaActivity extends AppCompatActivity implements SearchView.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plantilla);
-        btn_aniadir_jugador = findViewById(R.id.btn_aniadir_jugador_plantilla);
+        //btn_aniadir_jugador = findViewById(R.id.btn_aniadir_jugador_plantilla);
         bck_btn = findViewById(R.id.plan_bck_btn);
 
         plantilla = (DetalleEquipo) getIntent().getSerializableExtra("data");
 
-        btn_aniadir_jugador.setOnClickListener(new View.OnClickListener() {
+        /*btn_aniadir_jugador.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -59,7 +59,7 @@ public class PlantillaActivity extends AppCompatActivity implements SearchView.O
                 bottomSheetDialog.setContentView(bottomSheetView);
                 bottomSheetDialog.show();
             }
-        });
+        });*/
 
         bck_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,7 +115,7 @@ public class PlantillaActivity extends AppCompatActivity implements SearchView.O
 
     @Override
     public void itemClick(DatosJugador item) {
-        Intent intent = new Intent(this, EditarFilasPlantillaActivity.class);
+        Intent intent = new Intent(this, ProfileActivity.class);
         intent.putExtra("listElement", item);
         startActivity(intent);
     }

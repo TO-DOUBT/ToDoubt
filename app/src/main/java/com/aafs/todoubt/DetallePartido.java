@@ -43,7 +43,7 @@ public class DetallePartido extends AppCompatActivity implements OnMapReadyCallb
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_partido);
         // Inicializacion
-       imagenLocal = findViewById(R.id.dp_equipoLocal);
+        imagenLocal = findViewById(R.id.dp_equipoLocal);
         imagenVisitante = findViewById(R.id.dp_equipoVisitante);
         equipoLocal = findViewById(R.id.dp_nombreLocal);
         equipoVisitante = findViewById(R.id.dp_nombreVisitante);

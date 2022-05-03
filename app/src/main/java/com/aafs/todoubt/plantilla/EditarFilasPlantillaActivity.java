@@ -12,7 +12,8 @@ public class EditarFilasPlantillaActivity extends AppCompatActivity {
 
     private DatosJugador itemEditarJugadorFila;
     private TextView nombre_jugador;
-    private TextView dorsal_jugador;
+    //private TextView dorsal_jugador;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,17 +24,15 @@ public class EditarFilasPlantillaActivity extends AppCompatActivity {
 
     private void initView(){
         nombre_jugador = findViewById(R.id.et_nombre_jugador_editar_fila);
-        dorsal_jugador = findViewById(R.id.et_dorsal_jugador_editar_fila);
+        //dorsal_jugador = findViewById(R.id.et_dorsal_jugador_editar_fila);
     }
     private void initValues(){
         itemEditarJugadorFila = (DatosJugador) getIntent().getExtras().getSerializable("listElement");
 
         nombre_jugador.setText(itemEditarJugadorFila.getNombreCompleto());
 
-        /**
-         * todo: Cambiar por el dorsal sacado del Firebase
-         */
-        dorsal_jugador.setText(String.valueOf(itemEditarJugadorFila.getCodigoJugador()));
+
+        //dorsal_jugador.setText(String.valueOf(itemEditarJugadorFila.getCodigoJugador()));
 
 
     }

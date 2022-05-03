@@ -8,7 +8,6 @@ public class DatosJugador implements Serializable {
     private String nombreCompleto, edad, partidosConvocados,
             partidosJugados, partidosSuplente, partidosTitular, goles,
             tarjetasAmarillas, tarjetasRojas, linkJugador;
-    private String dorsal;
 
     public DatosJugador() {
     }
@@ -101,11 +100,4 @@ public class DatosJugador implements Serializable {
         this.linkJugador = linkJugador;
     }
 
-    public String getDorsal() {
-        return dorsal;
-    }
-
-    public void setDorsal(String dorsal) {
-        this.dorsal = dorsal;
-    }
 }

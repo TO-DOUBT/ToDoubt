@@ -52,10 +52,8 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.RecyclerHolder
     public void onBindViewHolder(@NonNull RecyclerHolder holder, int position) {
         DatosJugador item = items.get(position);
         holder.nombreJugador.setText(item.getNombreCompleto());
-        /**
-         * todo: Cambiar la linea de abajo por el dorsal sacado de firebase
-         */
-        holder.dorsalJugador.setText(String.valueOf(item.getCodigoJugador()));
+
+        //holder.dorsalJugador.setText(String.valueOf(item.getCodigoJugador()));
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -119,17 +117,15 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.RecyclerHolder
     public static class RecyclerHolder extends RecyclerView.ViewHolder{
 
         private TextView nombreJugador;
-        private TextView dorsalJugador;
+        //private TextView dorsalJugador;
 
 
 
         public RecyclerHolder(@NonNull View itemView) {
             super(itemView);
             nombreJugador = itemView.findViewById(R.id.txt_nombre_completo_jugador);
-            /**
-             * todo: Cambiar la linea de abajo por el dorsal sacado de firebase
-             */
-            dorsalJugador = itemView.findViewById(R.id.txt_dorsal_jugador);
+
+            //dorsalJugador = itemView.findViewById(R.id.txt_dorsal_jugador);
 
         }
     }
