@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".PerfilJugador">
 
-    <CheckBox
-        android:id="@+id/checkBoxEntrenador"
+    <RadioButton
+        android:id="@+id/RadioButtonEntrenador"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="92dp"
@@ -16,7 +16,8 @@
         app:layout_constraintHorizontal_bias="0.804"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Entrenador/a" />
+        tools:text="Entrenador/a"
+        />
 
     <TextView
         android:id="@+id/Registro"
@@ -46,16 +47,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Registro" />
 
-    <CheckBox
-        android:id="@+id/checkBoxJugador"
+    <RadioButton
+        android:id="@+id/RadioButtonJugador"
         android:layout_width="115dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
         android:buttonTint="#FF9800"
         android:text="Jugador/a"
-        app:layout_constraintEnd_toStartOf="@+id/checkBoxEntrenador"
+        app:layout_constraintEnd_toStartOf="@+id/RadioButtonEntrenador"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TipoUsuario" />
+        app:layout_constraintTop_toBottomOf="@+id/TipoUsuario" >
+
+    </RadioButton>
 
     <TextView
         android:id="@+id/Género"
@@ -69,22 +72,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.131"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBoxJugador" />
+        app:layout_constraintTop_toBottomOf="@+id/RadioButtonJugador" />
 
-    <CheckBox
-        android:id="@+id/checkBox5"
+    <RadioButton
+        android:id="@+id/RadioButtonHombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:buttonTint="#FF9800"
         android:text="Hombre"
-        app:layout_constraintEnd_toStartOf="@+id/checkBox6"
+        app:layout_constraintEnd_toStartOf="@+id/RadioButtonMujer"
         app:layout_constraintHorizontal_bias="0.436"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Género" />
+        app:layout_constraintTop_toBottomOf="@+id/Género" >
 
-    <CheckBox
-        android:id="@+id/checkBox6"
+    </RadioButton>
+
+    <RadioButton
+        android:id="@+id/RadioButtonMujer"
         android:layout_width="82dp"
         android:layout_height="49dp"
         android:layout_marginTop="60dp"
@@ -92,7 +97,9 @@
         android:buttonTint="#FF9800"
         android:text="Mujer"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBoxEntrenador" />
+        app:layout_constraintTop_toBottomOf="@+id/RadioButtonEntrenador">
+
+    </RadioButton>
 
     <TextView
         android:id="@+id/textView8"
@@ -106,7 +113,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.167"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox5" />
+        app:layout_constraintTop_toBottomOf="@+id/RadioButtonHombre" />
 
     <EditText
         android:id="@+id/editTextTextPersonName"
@@ -120,7 +127,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.269"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox6" />
+        app:layout_constraintTop_toBottomOf="@+id/RadioButtonMujer" />
 
     <TextView
         android:id="@+id/textView9"
