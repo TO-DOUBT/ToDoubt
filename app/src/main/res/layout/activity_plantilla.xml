@@ -144,28 +144,52 @@
 
 
     </LinearLayout>-->
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="366dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/guideLineEnd"
+        app:layout_constraintStart_toEndOf="@+id/guideLineStart"
+        app:layout_constraintTop_toBottomOf="@+id/cardView_jugadores_plantilla">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="*"
+            android:textColor="@color/black"
+            android:textSize="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="Para modificar un jugador específico presione en la fila correspondiente"
+            android:textSize="12dp" />
+
+    </LinearLayout>
 
     <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
         android:id="@+id/btn_aniadir_jugador_plantilla"
-        android:layout_marginTop="24dp"
         style="@style/plantilla_button_aniadir_jugador"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:textAllCaps="false"
-        android:fontFamily="@font/actor"
         android:drawableLeft="@drawable/ic_add"
-        android:gravity="center"
         android:drawablePadding="5dp"
+        android:fontFamily="@font/actor"
+        android:gravity="center"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textStyle="bold"
 
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btn_modificar_jugador_plantilla"
+        app:layout_constraintEnd_toEndOf="@+id/guideLineEnd"
         app:layout_constraintStart_toEndOf="@+id/guideLineStart"
-        app:layout_constraintTop_toBottomOf="@+id/cardView_jugadores_plantilla" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
-    <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
+
+
+    <!--<br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
         android:id="@+id/btn_modificar_jugador_plantilla"
         android:layout_marginTop="24dp"
         style="@style/plantilla_button_modificar_jugador"
@@ -182,7 +206,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/guideLineEnd"
         app:layout_constraintStart_toEndOf="@+id/btn_aniadir_jugador_plantilla"
-        app:layout_constraintTop_toBottomOf="@+id/cardView_jugadores_plantilla" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView_jugadores_plantilla" />-->
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideLineStart"

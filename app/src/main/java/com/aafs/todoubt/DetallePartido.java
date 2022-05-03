@@ -10,12 +10,12 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.aafs.todoubt.databinding.ActivityDetallePartidoBinding;
+//import com.aafs.todoubt.databinding.ActivityDetallePartidoBinding;
 import com.aafs.todoubt.wsdatos.DatosPartido;
 import com.aafs.todoubt.wsdatos.DetalleEquipo;
 import com.aafs.todoubt.wsdatos.HiloPeticionActa;
 import com.aafs.todoubt.wsdatos.HiloPeticionDatos;
-import com.bumptech.glide.Glide;
+/*import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -23,15 +23,15 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.MarkerOptions;*/
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
-public class DetallePartido extends AppCompatActivity implements OnMapReadyCallback, HiloPeticionActa.InterfazDatos {
-    private GoogleMap mMap;
-    private ActivityDetallePartidoBinding binding;
+public class DetallePartido extends AppCompatActivity /*implements OnMapReadyCallback, HiloPeticionActa.InterfazDatos*/ {
+    /*private GoogleMap mMap;
+    private ActivityDetallePartidoBinding binding;*/
     private DatosPartido data;
     private ImageView imagenLocal, imagenVisitante;
     private TextView equipoLocal, equipoVisitante, resultado;
@@ -41,7 +41,7 @@ public class DetallePartido extends AppCompatActivity implements OnMapReadyCallb
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_partido);
         // Inicializacion
-        imagenLocal = findViewById(R.id.dp_equipoLocal);
+       /* imagenLocal = findViewById(R.id.dp_equipoLocal);
         imagenVisitante = findViewById(R.id.dp_equipoVisitante);
         equipoLocal = findViewById(R.id.dp_nombreLocal);
         equipoVisitante = findViewById(R.id.dp_nombreVisitante);
@@ -79,13 +79,13 @@ public class DetallePartido extends AppCompatActivity implements OnMapReadyCallb
                 });
         equipoLocal.setText(data.getEquipoLocal());
         equipoVisitante.setText(data.getEquipoVisitante());
-        resultado.setText(data.getResultado());
+        resultado.setText(data.getResultado());*/
         /**
          * Todo: Marcador del mapa con localizacion [Geocoder] https://www.tabnine.com/code/java/classes/android.location.Geocoder
          */
 
     }
-
+/*
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
@@ -120,5 +120,5 @@ public class DetallePartido extends AppCompatActivity implements OnMapReadyCallb
         mMap.addMarker(new MarkerOptions().position(campo).title("Campo"));
         float zoomLevel = 16.0f; //This goes up to 21
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(campo, zoomLevel));
-    }
+    }*/
 }

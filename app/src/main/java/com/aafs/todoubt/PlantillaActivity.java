@@ -6,32 +6,43 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
+import android.widget.CheckBox;
+import android.widget.RadioButton;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class PlantillaActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
+public class PlantillaActivity extends AppCompatActivity implements SearchView.OnQueryTextListener, ListAdapter.RecyclerItemClick {
 
     private ListAdapter listAdapter;
     private RecyclerView recyclerView;
     private List<ListElement> items;
     private SearchView buscador_plantilla_jugadores;
-   private Button btn_prueba1;
+    private Button btn_aniadir_jugador;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plantilla);
-        btn_prueba1 = findViewById(R.id.btn_aniadir_jugador_plantilla);
+        btn_aniadir_jugador = findViewById(R.id.btn_aniadir_jugador_plantilla);
 
-        btn_prueba1.setOnClickListener(new View.OnClickListener() {
+
+
+
+
+
+        btn_aniadir_jugador.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -51,11 +62,13 @@ public class PlantillaActivity extends AppCompatActivity implements SearchView.O
 
             }
         });
-       
+
         initViews();
         initValues();
         initListener();
     }
+
+
 
     private void initViews(){
         recyclerView = findViewById(R.id.recycler_jugadores_plantilla);
@@ -67,7 +80,7 @@ public class PlantillaActivity extends AppCompatActivity implements SearchView.O
         LinearLayoutManager manager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(manager);
         items = getItems();
-        listAdapter = new ListAdapter(items);
+        listAdapter = new ListAdapter(items, this);
        //recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(listAdapter);
 
@@ -114,4 +127,15 @@ public class PlantillaActivity extends AppCompatActivity implements SearchView.O
         listAdapter.filter(newText);
         return false;
     }
+
+    @Override
+    public void itemClick(ListElement item) {
+        Intent intent = new Intent(this,EditarFilasPlantillaActivity.class);
+        intent.putExtra("listElement", item);
+        startActivity(intent);
+    }
+
+
+
+
 }
