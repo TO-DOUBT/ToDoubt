@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.aafs.todoubt.DetallePartido;
@@ -32,6 +33,7 @@ public class FullActivity extends BaseActivity implements
     private int mYear;
     private CalendarView mCalendarView;
     private ArrayList<DatosPartido> listaPartidos;
+    private ImageButton bck;
 
     public static void show(Context context) {
         context.startActivity(new Intent(context, FullActivity.class));
@@ -50,6 +52,8 @@ public class FullActivity extends BaseActivity implements
         mTextYear = findViewById(R.id.tv_year);
         mTextCurrentDay = findViewById(R.id.tv_current_day);
         mCalendarView = findViewById(R.id.calendarView);
+        bck = findViewById(R.id.cal_bck_btn);
+
         mTextMonthDay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,6 +75,12 @@ public class FullActivity extends BaseActivity implements
         mYear = mCalendarView.getCurYear();
         mTextMonthDay.setText(mCalendarView.getCurMonth() + " - " + mCalendarView.getCurDay());
         mTextCurrentDay.setText(String.valueOf(mCalendarView.getCurDay()));
+        bck.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         // Recpger Datos Intent
         listaPartidos = (ArrayList<DatosPartido>)( getIntent().getBundleExtra("LIST").getSerializable("key"));

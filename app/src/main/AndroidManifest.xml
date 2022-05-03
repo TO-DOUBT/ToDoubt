@@ -20,6 +20,9 @@
         android:theme="@style/Theme.ToDoubt"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ClasificacionActivity"
+            android:exported="false" />
+        <activity
             android:name=".ProfileActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".DetallePartido" />
@@ -41,16 +44,16 @@
             android:name=".PlantillaActivity"
             android:label="Plantilla"
             android:parentActivityName=".RegisterActivity"
-            android:theme="@style/Theme.ToDoubt"/>
+            android:theme="@style/Theme.ToDoubt" />
         <activity
             android:name=".SplashScreenActivity"
-            android:theme="@style/Theme.ToDoubt.NoActionBar"/>
+            android:theme="@style/Theme.ToDoubt.NoActionBar" />
         <activity
             android:name=".RegisterActivity"
-            android:theme="@style/Theme.ToDoubt.NoActionBar"/>
+            android:theme="@style/Theme.ToDoubt.NoActionBar" />
         <activity
             android:name=".calendario.FullActivity"
-            android:theme="@style/Theme.ToDoubt.NoActionBar"/>
+            android:theme="@style/Theme.ToDoubt.NoActionBar" />
 
         <meta-data
             android:name="preloaded_fonts"

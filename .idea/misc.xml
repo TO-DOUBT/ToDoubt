@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/DAM_II-Workspaces/apps/ToDoubt/app/src/main/res/layout/activity_calendario.xml" value="0.25416666666666665" />
+        <entry key="..\:/DAM_II-Workspaces/apps/ToDoubt/app/src/main/res/layout/activity_clasificacion.xml" value="0.25416666666666665" />
+        <entry key="..\:/DAM_II-Workspaces/apps/ToDoubt/app/src/main/res/layout/activity_detalle_partido.xml" value="0.25416666666666665" />
+        <entry key="..\:/DAM_II-Workspaces/apps/ToDoubt/app/src/main/res/layout/activity_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/DAM_II-Workspaces/apps/ToDoubt/app/src/main/res/layout/activity_plantilla.xml" value="0.25416666666666665" />
         <entry key="..\:/Universidad/Apps/ToDoubt/app/src/main/res/drawable/bg_ripple.xml" value="0.194" />
         <entry key="..\:/Universidad/Apps/ToDoubt/app/src/main/res/drawable/cardview_shape.xml" value="0.3635" />
         <entry key="..\:/Universidad/Apps/ToDoubt/app/src/main/res/drawable/ic_baseline_arrow_back_ios_new_24.xml" value="0.3635" />
@@ -18,7 +23,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
