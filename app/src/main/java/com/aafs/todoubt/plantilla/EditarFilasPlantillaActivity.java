@@ -1,4 +1,4 @@
-package com.aafs.todoubt;
+package com.aafs.todoubt.plantilla;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,10 +6,11 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.aafs.todoubt.R;
+import com.aafs.todoubt.wsdatos.DatosJugador;
 
 public class EditarFilasPlantillaActivity extends AppCompatActivity {
 
-    private ListElement itemEditarJugadorFila;
+    private DatosJugador itemEditarJugadorFila;
     private TextView nombre_jugador;
     private TextView dorsal_jugador;
     @Override
@@ -25,11 +26,14 @@ public class EditarFilasPlantillaActivity extends AppCompatActivity {
         dorsal_jugador = findViewById(R.id.et_dorsal_jugador_editar_fila);
     }
     private void initValues(){
-        itemEditarJugadorFila = (ListElement) getIntent().getExtras().getSerializable("listElement");
+        itemEditarJugadorFila = (DatosJugador) getIntent().getExtras().getSerializable("listElement");
 
-        nombre_jugador.setText(itemEditarJugadorFila.getNombreJugador());
+        nombre_jugador.setText(itemEditarJugadorFila.getNombreCompleto());
 
-        dorsal_jugador.setText(itemEditarJugadorFila.getDorsalJugador());
+        /**
+         * todo: Cambiar por el dorsal sacado del Firebase
+         */
+        dorsal_jugador.setText(String.valueOf(itemEditarJugadorFila.getCodigoJugador()));
 
 
     }

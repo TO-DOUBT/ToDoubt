@@ -1,7 +1,6 @@
-package com.aafs.todoubt;
+package com.aafs.todoubt.plantilla;
 
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.view.LayoutInflater;
@@ -12,20 +11,23 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.aafs.todoubt.R;
+import com.aafs.todoubt.wsdatos.DatosJugador;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.RecyclerHolder> {
-    private List<ListElement> items;
-    private List<ListElement> originalItems;
+    private List<DatosJugador> items;
+    private List<DatosJugador> originalItems;
     private LinearLayout fila_jugadores;
     private RecyclerItemClick itemClick;
 
     private int contador = 0;
 
-    public ListAdapter(List<ListElement> items, RecyclerItemClick itemClick) {
+    public ListAdapter(List<DatosJugador> items, RecyclerItemClick itemClick) {
         this.items = items;
         this.originalItems = new ArrayList<>();
         originalItems.addAll(items);
@@ -48,9 +50,12 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.RecyclerHolder
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerHolder holder, int position) {
-         ListElement item = items.get(position);
-         holder.nombreJugador.setText(item.getNombreJugador());
-        holder.dorsalJugador.setText(item.getDorsalJugador());
+        DatosJugador item = items.get(position);
+        holder.nombreJugador.setText(item.getNombreCompleto());
+        /**
+         * todo: Cambiar la linea de abajo por el dorsal sacado de firebase
+         */
+        holder.dorsalJugador.setText(String.valueOf(item.getCodigoJugador()));
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,15 +97,15 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.RecyclerHolder
         else{
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N){
                 items.clear();
-                List<ListElement> collect = originalItems.stream()
-                        .filter(i -> i.getNombreJugador().toLowerCase().contains(strSearchLowerCase))
+                List<DatosJugador> collect = originalItems.stream()
+                        .filter(i -> i.getNombreCompleto().toLowerCase().contains(strSearchLowerCase))
                         .collect(Collectors.toList());
 
                 items.addAll(collect);
             }
             else {
-                for (ListElement i : originalItems) {
-                    if (i.getNombreJugador().toLowerCase().contains(strSearchLowerCase)){
+                for (DatosJugador i : originalItems) {
+                    if (i.getNombreCompleto().toLowerCase().contains(strSearchLowerCase)){
                         items.add(i);
                     }
 
@@ -121,13 +126,16 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.RecyclerHolder
         public RecyclerHolder(@NonNull View itemView) {
             super(itemView);
             nombreJugador = itemView.findViewById(R.id.txt_nombre_completo_jugador);
+            /**
+             * todo: Cambiar la linea de abajo por el dorsal sacado de firebase
+             */
             dorsalJugador = itemView.findViewById(R.id.txt_dorsal_jugador);
 
         }
     }
 
     public interface RecyclerItemClick {
-        void itemClick(ListElement item);
+        void itemClick(DatosJugador item);
     }
 
 }
