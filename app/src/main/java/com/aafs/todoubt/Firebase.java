@@ -19,8 +19,8 @@ public class Firebase {
     private static FirebaseDatabase myDatabase = FirebaseDatabase.getInstance();
     private static DatabaseReference myDatabaseReference = myDatabase.getReference("Users");
 
-    public static void crearRegistro(FirebaseAuth mAuth, User user, Context context) {
-        mAuth.createUserWithEmailAndPassword(user.getEmail(), user.getContrasenia()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+    public static void crearRegistro(FirebaseAuth mAuth, String contrasenia, User user, Context context) {
+        mAuth.createUserWithEmailAndPassword(user.getEmail(), contrasenia).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){

@@ -1,14 +1,13 @@
 package com.aafs.todoubt;
 
 public class User {
-    private String userId,nombre, contrasenia,email;
+    private String userId,nombre,email;
 
     public User(){}
 
-    public User(String userId, String nombre, String contrasenia, String email) {
+    public User(String userId, String nombre, String email) {
         this.userId = userId;
         this.nombre = nombre;
-        this.contrasenia = contrasenia;
         this.email = email;
     }
 
@@ -26,14 +25,6 @@ public class User {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    public String getContrasenia() {
-        return contrasenia;
-    }
-
-    public void setContrasenia(String contrasenia) {
-        this.contrasenia = contrasenia;
     }
 
     public String getEmail() {

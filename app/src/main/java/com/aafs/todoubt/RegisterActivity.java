@@ -50,8 +50,8 @@ public class RegisterActivity extends AppCompatActivity {
             }else {
                 if(contrasenia.length() >= 6){
                     String userUid = "";
-                    User user = new User(userUid,nombre,contrasenia,email);
-                    Firebase.crearRegistro(mAuth,user,RegisterActivity.this);
+                    User user = new User(userUid,nombre,email);
+                    Firebase.crearRegistro(mAuth,contrasenia,user,RegisterActivity.this);
                 }else{
                     editContrasenia.setError("Contraseña demasiado insegura");
                 }
