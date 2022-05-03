@@ -1,6 +1,7 @@
 package com.aafs.todoubt;
 
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.view.LayoutInflater;
@@ -20,13 +21,15 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.RecyclerHolder
     private List<ListElement> items;
     private List<ListElement> originalItems;
     private LinearLayout fila_jugadores;
+    private RecyclerItemClick itemClick;
 
     private int contador = 0;
 
-    public ListAdapter(List<ListElement> items) {
+    public ListAdapter(List<ListElement> items, RecyclerItemClick itemClick) {
         this.items = items;
         this.originalItems = new ArrayList<>();
         originalItems.addAll(items);
+        this.itemClick = itemClick;
     }
 
     @NonNull
@@ -49,6 +52,13 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.RecyclerHolder
          holder.nombreJugador.setText(item.getNombreJugador());
         holder.dorsalJugador.setText(item.getDorsalJugador());
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                itemClick.itemClick(item);
+            }
+        });
+
         //Pintar fondo de las filas
         if (contador % 2 == 0) {
             fila_jugadores.setBackgroundColor(Color.rgb(251, 251, 251));
@@ -56,6 +66,15 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.RecyclerHolder
         }else {
             fila_jugadores.setBackgroundColor(Color.rgb(255, 255, 255));
         }
+
+        /*holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(holder.itemView.getContext(),EditarFilasPlantillaActivity.class);
+                intent.putExtra("listElement", item);
+                holder.itemView.getContext().startActivity(intent);
+            }
+        });*/
     }
 
     @Override
@@ -105,6 +124,10 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.RecyclerHolder
             dorsalJugador = itemView.findViewById(R.id.txt_dorsal_jugador);
 
         }
+    }
+
+    public interface RecyclerItemClick {
+        void itemClick(ListElement item);
     }
 
 }

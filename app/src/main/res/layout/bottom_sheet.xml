@@ -104,21 +104,7 @@
             app:layout_constraintStart_toStartOf="@id/guideLineStart"
             app:layout_constraintTop_toBottomOf="@id/txt_dorsal_jugador"/>
 
-        <!--<br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
-            android:id="@+id/btn_Aceptar_aniadir_jugador"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="150dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginBottom="50dp"
-            android:background="@drawable/bigger_button_background"
-            android:fontFamily="@font/actor"
-            android:text="Aceptar"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
 
-
-            />-->
         <Button
             android:id="@+id/btn_aceptar_aniadir_jugador"
             android:layout_marginTop="50dp"

@@ -1,6 +1,8 @@
 package com.aafs.todoubt;
 
-public class ListElement {
+import java.io.Serializable;
+
+public class ListElement implements Serializable {
 
     public String nombreJugador;
     public String dorsalJugador;
