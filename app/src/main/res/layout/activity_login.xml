@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/Fondo"
+        app:srcCompat="@drawable/fondo"
         tools:layout_editor_absoluteY="0dp"
         tools:ignore="MissingConstraints" />
 
