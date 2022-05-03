@@ -34,7 +34,7 @@ public class DetallePartido extends AppCompatActivity implements OnMapReadyCallb
     private ActivityDetallePartidoBinding binding;
     private DatosPartido data;
     private ImageView imagenLocal, imagenVisitante;
-    private TextView equipoLocal, equipoVisitante, resultado, golesLocal, golesVisi, alinLocal, alinVisi, disp;
+    private TextView equipoLocal, equipoVisitante, resultado, golesLocal, golesVisi, alinLocal, alinVisi, disp, disp2;
     private ScrollView sc;
     private ImageView back;
 
@@ -55,6 +55,7 @@ public class DetallePartido extends AppCompatActivity implements OnMapReadyCallb
         sc = findViewById(R.id.dp_scrollView2);
         disp = findViewById(R.id.dp_noDisp);
         back = findViewById(R.id.dp_bck_button);
+        disp2 = findViewById(R.id.dp_noDisp2);
         // Intents
         data = (DatosPartido) getIntent().getSerializableExtra("partido");
         HiloPeticionActa h = new HiloPeticionActa(DetallePartido.this, data);
@@ -133,12 +134,14 @@ public class DetallePartido extends AppCompatActivity implements OnMapReadyCallb
         List<Address> addresses = null;
         try {
             addresses = geocoder.getFromLocationName(localizacionCampo.replaceAll("[^a-zA-Z]+",""),1);
-        } catch (IOException e) {
-            e.printStackTrace();
+            double latitud = addresses.get(0).getLatitude();
+            double longitud = addresses.get(0).getLongitude();
+            dibujarCampo(latitud,longitud);
+        } catch (Exception e) {
+            disp2.setVisibility(View.VISIBLE);
         }
-        double latitud = addresses.get(0).getLatitude();
-        double longitud = addresses.get(0).getLongitude();
-        dibujarCampo(latitud,longitud);
+
+
     }
 
     private void dibujarCampo(double latitud, double longitud) {

@@ -69,6 +69,10 @@ public class PeticionDatos {
         }
     }
 
+    /**
+     * Pide los datos de un equipo
+     * @return el objeto que contiene dichos datos
+     */
     public static EstadiscasEquipo pedirDatos() {
         int contador = 0;
         int lider = 0;
@@ -91,12 +95,13 @@ public class PeticionDatos {
                     a.setLinkDetalle(headline.child(0).child(1).child(1).child(0).child(0).attr("href"));
                    contador++;
                }
-               a.getClasificacion().add(headline.child(0).child(1).child(1).text());
+
             }
+            a.getClasificacion().add(headline.child(0).child(1).child(1).text());
         }
         return a;
     }
-    public static List<DatosPartido> pedirDatosPartido(){
+    public static ArrayList<DatosPartido> pedirDatosPartido(){
         Elements newsHeadlines = doc.getElementsByClass("table matches session calendario");
         for (Element headline : newsHeadlines) {
             aux = new DatosPartido();
@@ -119,7 +124,7 @@ public class PeticionDatos {
             }
             b.add(aux);
         }
-        return b;
+        return (ArrayList<DatosPartido>) b;
     }
     public static DetalleEquipo pedirDatosPlantilla(){
         c = new DetalleEquipo();

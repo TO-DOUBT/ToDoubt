@@ -10,7 +10,6 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -21,23 +20,35 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ToDoubt"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ProfileActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".DetallePartido"/>
+        <activity
+            android:name=".ClasificacionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".DetallePartido" />
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
-
-        <activity android:name=".Home" android:theme="@style/Theme.ToDoubt">
-        </activity>
-        <activity android:name=".PlantillaActivity"
-            android:label="Plantilla"
+        <activity
+            android:name=".Home"
             android:theme="@style/Theme.ToDoubt"
-            android:parentActivityName=".RegisterActivity">
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
+            android:name=".PlantillaActivity"
+            android:label="Plantilla"
+            android:parentActivityName=".RegisterActivity"
+            android:theme="@style/Theme.ToDoubt" />
+        <activity
             android:name=".SplashScreenActivity"
-            android:theme="@style/Theme.ToDoubt.NoActionBar">
-        </activity>
+            android:theme="@style/Theme.ToDoubt.NoActionBar" />
         <activity
             android:name=".RegisterActivity"
             android:theme="@style/Theme.ToDoubt.NoActionBar"
@@ -54,6 +65,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".calendario.FullActivity"
+            android:theme="@style/Theme.ToDoubt.NoActionBar" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
