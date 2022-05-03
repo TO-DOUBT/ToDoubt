@@ -2,7 +2,7 @@ package com.aafs.todoubt.wsdatos;
 
 import com.aafs.todoubt.DetallePartido;
 
-public class HiloPeticionActa /*implements Runnable*/{/*
+public class HiloPeticionActa implements Runnable{
 
     private DetallePartido context;
     private DatosPartido acta;
@@ -22,5 +22,5 @@ public class HiloPeticionActa /*implements Runnable*/{/*
     }
     public interface InterfazDatos {
         public void devolverCampo(DatosPartido dataPartido);
-    }*/
+    }
 }
