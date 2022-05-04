@@ -1,13 +1,12 @@
 package com.aafs.todoubt;
 
 public class User {
-    private String userId,nombre,email;
+    private String userId,email;
 
     public User(){}
 
-    public User(String userId, String nombre, String email) {
+    public User(String userId, String email) {
         this.userId = userId;
-        this.nombre = nombre;
         this.email = email;
     }
 
@@ -17,14 +16,6 @@ public class User {
 
     public void setUserId(String userId) {
         this.userId = userId;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
     }
 
     public String getEmail() {

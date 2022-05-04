@@ -1,4 +1,18 @@
 <resources>
+   <!--Registro e Iniciar Sesion-->
+    <string name="titulo_registro">Registro</string>
+    <string name="titulo_iniciar_sesion">Iniciar Sesión</string>
+    <string name="correo">Email</string>
+    <string name="contrasenia">Contraseña</string>
+    <string name="iniciar_facebook">Iniciar con Facebook</string>
+    <string name="iniciar_google">Iniciar con google</string>
+    <string name="registro_facebook">Regístrate con Facebook</string>
+    <string name="registro_google">Regístrate con google</string>
+    <string name="pregunta_parte1_iniciar">¿No tienes una cuenta?</string>
+    <string name="pregunta_parte1_registro">¿Ya tienes una cuenta?</string>
+    <string name="pregunta_parte2_iniciar">Regístrate</string>
+    <string name="pregunta_parte2_registro">Inicia Sesión</string>
+    <string name="olvidaste_tu_contrase_a">¿Olvidaste tu contraseña?</string>
     <!--PERFIL-->
     <string name="app_name">ToDoubt</string>
     <string name="profile_info">Detalles personales</string>
@@ -35,5 +49,5 @@
     <string name="has_olvidado_tu_contrase_a">¿Olvidaste tu Contraseña?</string>
     <string name="texto_forgotpasswd">Escribe tu Email y te llegara un correo con tu nueva contraseña.</string>
     <string name="enviar">Enviar</string>
-    <!-- LOGIN-->
+
 </resources>

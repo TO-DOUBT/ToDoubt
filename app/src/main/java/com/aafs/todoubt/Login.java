@@ -14,6 +14,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,16 +32,18 @@ public class Login extends AppCompatActivity {
     private TextView olvidarCont;
     private Button btnLogin;
     private FirebaseAuth mauth;
+    private TextView cambiarAregistro;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        olvidarCont = findViewById(R.id.olvidarContrasenia);
-        editMail = findViewById(R.id.editTextTextEmailAddress3);
-        editPassword = findViewById(R.id.editTextTextEmailAddress2);
-        btnLogin = findViewById(R.id.button2);
+        olvidarCont = findViewById(R.id.olvidarContraseña);
+        editMail = findViewById(R.id.et_login_correo);
+        editPassword = findViewById(R.id.et_login_contrasena);
+        btnLogin = findViewById(R.id.btn_login);
+        cambiarAregistro = findViewById(R.id.pregunta2_registro);
         mauth = FirebaseAuth.getInstance();
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -64,6 +67,17 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 showAlertDialogForgotPassword();
+            }
+        });
+
+        //Metodo de "signUpTextview" para realizar transicion de "LoginActivity" a "RegistroActivity"
+        cambiarAregistro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Login.this, RegisterActivity.class);
+                startActivity(intent);
+
+
             }
         });
     }
