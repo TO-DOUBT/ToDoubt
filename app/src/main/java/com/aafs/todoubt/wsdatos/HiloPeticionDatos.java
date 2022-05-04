@@ -28,13 +28,6 @@ public class HiloPeticionDatos implements Runnable {
         PeticionDatos.conectar3();
         DetalleEquipo c = PeticionDatos.pedirDatosPlantilla();
         context.devolverDatosPlantilla(c);
-
-        /**
-         * todo: LLamar desde el perfil del jugador para sacar infrmacion del mismo, No va aqui.
-         */
-        PeticionDatos.conectar4(c.getJugadoresEquipo().get(3).getLinkJugador()); // link de un jugador que esta en la lista
-        DatosJugador d = PeticionDatos.pedirDatosJugador(c.getJugadoresEquipo().get(3)); // estadisticas del jugador en cuestion
-
     }
 
     public interface InterfazDatos {

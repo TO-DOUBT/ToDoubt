@@ -254,28 +254,30 @@
                                         android:layout_marginTop="23dp"
                                         android:src="@drawable/bola_estadistica">
                                     </ImageView>
+
                                     <TextView
-                                        android:id="@+id/numJornadaProfile"
-                                        android:layout_height="wrap_content"
+                                        android:id="@+id/numConvProfile"
                                         android:layout_width="0dp"
-                                        android:text="15"
-                                        android:textSize="45sp"
-                                        android:textColor="@color/black"
+                                        android:layout_height="wrap_content"
                                         android:layout_alignStart="@id/imageViewJornada"
-                                        android:layout_alignEnd="@id/imageViewJornada"
                                         android:layout_alignTop="@id/imageViewJornada"
+                                        android:layout_alignEnd="@id/imageViewJornada"
                                         android:layout_alignBottom="@id/imageViewJornada"
-                                        android:gravity="center"/>
+                                        android:gravity="center"
+                                        android:text="15"
+                                        android:textColor="@color/black"
+                                        android:textSize="45sp" />
                                 </RelativeLayout>
+
                                 <TextView
                                     android:layout_width="105dp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="30dp"
                                     android:layout_marginTop="5dp"
-                                    android:textSize="20sp"
+                                    android:text="@string/profile_convocado"
                                     android:textAlignment="center"
-                                    android:text="@string/profile_jornada"
-                                    android:textColor="@color/black"/>
+                                    android:textColor="@color/black"
+                                    android:textSize="20sp" />
                             </LinearLayout>
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -291,28 +293,30 @@
                                         android:layout_marginStart="70dp"
                                         android:layout_marginTop="23dp"
                                         android:src="@drawable/bola_estadistica"/>
+
                                     <TextView
-                                        android:id="@+id/numConvocadoProfile"
-                                        android:layout_height="wrap_content"
+                                        android:id="@+id/numJugaProfile"
                                         android:layout_width="0dp"
-                                        android:text="15"
-                                        android:textSize="45sp"
-                                        android:textColor="@color/black"
+                                        android:layout_height="wrap_content"
                                         android:layout_alignStart="@id/imageViewConvocado"
-                                        android:layout_alignEnd="@id/imageViewConvocado"
                                         android:layout_alignTop="@id/imageViewConvocado"
+                                        android:layout_alignEnd="@id/imageViewConvocado"
                                         android:layout_alignBottom="@id/imageViewConvocado"
-                                        android:gravity="center"/>
+                                        android:gravity="center"
+                                        android:text="15"
+                                        android:textColor="@color/black"
+                                        android:textSize="45sp" />
                                 </RelativeLayout>
+
                                 <TextView
                                     android:layout_width="105dp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="70dp"
                                     android:layout_marginTop="5dp"
-                                    android:textSize="20sp"
+                                    android:text="@string/profile_jornada"
                                     android:textAlignment="center"
-                                    android:text="@string/profile_convocado"
-                                    android:textColor="@color/black"/>
+                                    android:textColor="@color/black"
+                                    android:textSize="20sp" />
                             </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
@@ -333,18 +337,19 @@
                                         android:layout_marginStart="30dp"
                                         android:layout_marginTop="23dp"
                                         android:src="@drawable/bola_estadistica"/>
+
                                     <TextView
                                         android:id="@+id/numTitularProfile"
-                                        android:layout_height="wrap_content"
                                         android:layout_width="0dp"
-                                        android:text="14"
-                                        android:textSize="45sp"
-                                        android:textColor="@color/black"
+                                        android:layout_height="wrap_content"
                                         android:layout_alignStart="@id/imageViewTitular"
-                                        android:layout_alignEnd="@id/imageViewTitular"
                                         android:layout_alignTop="@id/imageViewTitular"
+                                        android:layout_alignEnd="@id/imageViewTitular"
                                         android:layout_alignBottom="@id/imageViewTitular"
-                                        android:gravity="center"/>
+                                        android:gravity="center"
+                                        android:text="14"
+                                        android:textColor="@color/black"
+                                        android:textSize="45sp" />
                                 </RelativeLayout>
                                 <TextView
                                     android:layout_width="105dp"
@@ -370,18 +375,19 @@
                                         android:layout_marginStart="70dp"
                                         android:layout_marginTop="23dp"
                                         android:src="@drawable/bola_estadistica"/>
+
                                     <TextView
                                         android:id="@+id/numGolesProfile"
-                                        android:layout_height="wrap_content"
                                         android:layout_width="0dp"
-                                        android:text="1"
-                                        android:textSize="45sp"
-                                        android:textColor="@color/black"
+                                        android:layout_height="wrap_content"
                                         android:layout_alignStart="@id/imageViewGoles"
-                                        android:layout_alignEnd="@id/imageViewGoles"
                                         android:layout_alignTop="@id/imageViewGoles"
+                                        android:layout_alignEnd="@id/imageViewGoles"
                                         android:layout_alignBottom="@id/imageViewGoles"
-                                        android:gravity="center"/>
+                                        android:gravity="center"
+                                        android:text="1"
+                                        android:textColor="@color/black"
+                                        android:textSize="45sp" />
                                 </RelativeLayout>
                                 <TextView
                                     android:layout_width="105dp"
@@ -410,15 +416,17 @@
                                     android:layout_marginStart="30dp"
                                     android:layout_marginTop="23dp"
                                     android:src="@drawable/amarillo"/>
+
                                 <TextView
+                                    android:id="@+id/txtAmarillaProf"
                                     android:layout_width="105dp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="30dp"
                                     android:layout_marginTop="5dp"
-                                    android:textSize="20sp"
-                                    android:textAlignment="center"
                                     android:text="amarillas"
-                                    android:textColor="@color/black"/>
+                                    android:textAlignment="center"
+                                    android:textColor="@color/black"
+                                    android:textSize="20sp" />
                             </LinearLayout>
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -431,15 +439,17 @@
                                     android:layout_marginStart="70dp"
                                     android:layout_marginTop="23dp"
                                     android:src="@drawable/roja"/>
+
                                 <TextView
+                                    android:id="@+id/txtRojaProf"
                                     android:layout_width="105dp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="70dp"
                                     android:layout_marginTop="5dp"
-                                    android:textSize="20sp"
-                                    android:textAlignment="center"
                                     android:text="rojas"
-                                    android:textColor="@color/black"/>
+                                    android:textAlignment="center"
+                                    android:textColor="@color/black"
+                                    android:textSize="20sp" />
                             </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
