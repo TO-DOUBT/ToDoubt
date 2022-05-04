@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -18,15 +19,17 @@ public class Login extends AppCompatActivity {
     private EditText editMail, editPassword;
     private Button btnLogin;
     private FirebaseAuth mauth;
+    private TextView cambiarAregistro;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        editMail = findViewById(R.id.editTextTextEmailAddress3);
-        editPassword = findViewById(R.id.editTextTextEmailAddress2);
-        btnLogin = findViewById(R.id.button2);
+        editMail = findViewById(R.id.et_login_correo);
+        editPassword = findViewById(R.id.et_login_contrasena);
+        btnLogin = findViewById(R.id.btn_login);
+        cambiarAregistro = findViewById(R.id.pregunta2_registro);
         mauth = FirebaseAuth.getInstance();
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -36,6 +39,17 @@ public class Login extends AppCompatActivity {
                 String password = editPassword.getText().toString();
 
                 loginUsuario(correo, password);
+
+            }
+        });
+
+        //Metodo de "signUpTextview" para realizar transicion de "LoginActivity" a "RegistroActivity"
+        cambiarAregistro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Login.this, RegisterActivity.class);
+                startActivity(intent);
+
 
             }
         });

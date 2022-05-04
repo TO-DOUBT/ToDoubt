@@ -5,8 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import com.aafs.todoubt.R;
-
 public class EditarFilasPlantillaActivity extends AppCompatActivity {
 
     private ListElement itemEditarJugadorFila;
@@ -21,7 +19,7 @@ public class EditarFilasPlantillaActivity extends AppCompatActivity {
     }
 
     private void initView(){
-        nombre_jugador = findViewById(R.id.et_nombre_jugador_editar_fila);
+        nombre_jugador = findViewById(R.id.txt_nombre_jugador_editar_fila);
         dorsal_jugador = findViewById(R.id.et_dorsal_jugador_editar_fila);
     }
     private void initValues(){
