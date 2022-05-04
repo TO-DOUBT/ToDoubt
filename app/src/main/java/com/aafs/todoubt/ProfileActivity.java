@@ -15,8 +15,8 @@ public class ProfileActivity extends AppCompatActivity implements HiloPeticionJu
 
     private DatosJugador datos;
     private TextView TV_nombreCompleto, TV_edad, TV_partidosConvocados,
-            TV_partidosJugados, TV_partidosSuplente, TV_partidosTitular, TV_goles,
-            TV_tarjetasAmarillas, TV_tarjetasRojas, TV_cod;
+            TV_partidosJugados, TV_partidosTitular, TV_goles,
+            TV_tarjetasAmarillas, TV_tarjetasRojas, TV_cod, TV_username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +32,7 @@ public class ProfileActivity extends AppCompatActivity implements HiloPeticionJu
         TV_tarjetasAmarillas = findViewById(R.id.txtAmarillaProf);
         TV_tarjetasRojas = findViewById(R.id.txtRojaProf);
         TV_cod = findViewById(R.id.txt_phone);
-
+        TV_username = findViewById(R.id.textViewUserNameProfile);
         // Webscrapping
         HiloPeticionJugador h = new HiloPeticionJugador(ProfileActivity.this, datos);
         Thread t = new Thread(h);
@@ -40,6 +40,11 @@ public class ProfileActivity extends AppCompatActivity implements HiloPeticionJu
 
     }
 
+    public String upperLetter(String str){
+        char [] chars = str.toCharArray();
+        chars[0] = Character.toUpperCase(chars[0]);
+        return new String(chars);
+    }
     @Override
     public void devolverDatos(DatosJugador data) {
         runOnUiThread(new Runnable() {
@@ -54,7 +59,9 @@ public class ProfileActivity extends AppCompatActivity implements HiloPeticionJu
                 TV_tarjetasAmarillas.setText(data.getTarjetasAmarillas());
                 TV_tarjetasRojas.setText(data.getTarjetasRojas());
                 TV_cod.setText(String.valueOf(data.getCodigoJugador()));
+                TV_username.setText(upperLetter(data.getNombreCompleto().split(",")[1].replace(" ", "").toLowerCase()) + " " + upperLetter(data.getNombreCompleto().split(",")[0].split(" ")[0].toLowerCase()));
             }
         });
     }
+
 }
