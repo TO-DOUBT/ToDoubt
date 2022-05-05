@@ -52,14 +52,21 @@
         app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
         tools:ignore="SpeakableTextPresentCheck">
-
-        <TableLayout
-            android:id="@+id/clf_clasificacion"
+        <HorizontalScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp" />
+            android:layout_height="wrap_content">
+
+            <TableLayout
+                android:id="@+id/clf_clasificacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp" />
+        </HorizontalScrollView>
+
     </ScrollView>
+
+
 
     <ImageButton
         android:id="@+id/clsf_bck_btn"

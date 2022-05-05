@@ -52,6 +52,12 @@ public class ClasificacionActivity extends AppCompatActivity {
                     b4.setTextSize(20);
                     b4.setText("Equipo\n");
                     tr.addView(b4);
+
+                    TextView b5=new TextView(ClasificacionActivity.this);
+                    b5.setText("Puntos\n");
+                    b5.setTextSize(20);
+                    tr.addView(b5);
+
                     clasif.addView(tr);
                     final View vline = new View(ClasificacionActivity.this);
                     vline.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, 2));
@@ -67,9 +73,22 @@ public class ClasificacionActivity extends AppCompatActivity {
                     TextView b1 = new TextView(ClasificacionActivity.this);
                     b1.setPadding(10, 0, 0, 0);
                     b1.setTextSize(15);
-                    String str1 = clasifica.get(i);
+                    String str1 = "";
+                    if (clasifica.get(i).contains("DUX")){
+                        str1 = clasifica.get(i).split(";")[0].substring(0, 33);
+                    } else{
+                        str1 = clasifica.get(i).split(";")[0];
+                    }
                     b1.setText(str1);
                     tr.addView(b1);
+
+                    TextView b2 = new TextView(ClasificacionActivity.this);
+                    b2.setPadding(10, 0, 0, 0);
+                    b2.setTextSize(15);
+                    String str2 = clasifica.get(i).split(";")[1];
+                    b2.setText(str2);
+                    tr.addView(b2);
+
                     clasif.addView(tr);
 
                     final View vline1 = new View(ClasificacionActivity.this);
