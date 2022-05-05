@@ -40,7 +40,7 @@ public class Firebase {
         });
     }
 
-    private static void guardarUsuario(String id, User user) {
+    public static void guardarUsuario(String id, User user) {
         myDatabaseReference.child(id).setValue(user);
     }
 }
