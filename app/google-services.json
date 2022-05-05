@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "604364731773-sp7r6bgknhnd2r3ok4b5ioftouu6gu94.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aafs.todoubt",
+            "certificate_hash": "a1933381086aeacebe8170cf48a44771ffb350b9"
+          }
+        },
+        {
           "client_id": "604364731773-gfaquq05u3lclff26veu37cvo03po65h.apps.googleusercontent.com",
           "client_type": 3
         }

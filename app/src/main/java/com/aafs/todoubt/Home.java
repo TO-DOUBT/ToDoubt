@@ -16,6 +16,9 @@ import com.aafs.todoubt.calendario.FullActivity;
 import com.aafs.todoubt.wsdatos.EstadiscasEquipo;
 import com.aafs.todoubt.wsdatos.DatosPartido;
 import com.aafs.todoubt.wsdatos.HiloPeticionDatos;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
@@ -28,6 +31,7 @@ public class Home extends AppCompatActivity implements HiloPeticionDatos.Interfa
     private CardView CV_proximoPartido, CV_calendario, CV_clasific;
     private DatosPartido prox_partido;
     private FirebaseAuth mAuth;
+    private GoogleSignInClient mGoogleSignInClient;
 
 
     @Override
@@ -54,6 +58,14 @@ public class Home extends AppCompatActivity implements HiloPeticionDatos.Interfa
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar_home);
         setSupportActionBar(myToolbar);
+
+        GoogleSignInOptions gso = new GoogleSignInOptions
+                .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build();
+
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
     }
     /**
      * Sirve para ir a setting en el toolbar
@@ -64,6 +76,7 @@ public class Home extends AppCompatActivity implements HiloPeticionDatos.Interfa
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.settings_button) {
             mAuth.signOut();
+            mGoogleSignInClient.signOut();
             Intent intent = new Intent(getApplicationContext(), Login.class);
             startActivity(intent);
             return true;
