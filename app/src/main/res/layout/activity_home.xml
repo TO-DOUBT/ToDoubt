@@ -270,7 +270,17 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="676dp" />
 
-    <TextView
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_home"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        app:menu="@menu/menu_profile"
+        app:title="@string/nombre_equipo"
+        app:titleTextColor="@color/black"
+        tools:ignore="MissingConstraints" />
+
+    <!--<TextView
         android:id="@+id/home_NombreEquipo"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -282,7 +292,7 @@
         app:layout_constraintBottom_toTopOf="@+id/home_CV_proximoPartido"
         app:layout_constraintEnd_toStartOf="@+id/home_gd_2"
         app:layout_constraintStart_toStartOf="@+id/home_gd_1"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />-->
 
     <TextView
         android:id="@+id/home_Partido_txt"

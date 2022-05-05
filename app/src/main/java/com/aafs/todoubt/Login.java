@@ -24,6 +24,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Objects;
 
@@ -76,10 +77,20 @@ public class Login extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Login.this, RegisterActivity.class);
                 startActivity(intent);
-
-
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser firebaseUser = mauth.getCurrentUser();
+        if (firebaseUser != null){
+            Intent accessIntent = new Intent(getApplicationContext(), Home.class);
+            accessIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            accessIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(accessIntent);
+        }
     }
 
     private void loginUsuario(String correo, String password) {
@@ -124,7 +135,6 @@ public class Login extends AppCompatActivity {
         // Here we create and show the alert dialog
         AlertDialog dialog = builder.create();
         dialog.show();
-
         Button positiveButton = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
         positiveButton.setBackgroundColor(getResources().getColor(R.color.orange_detail));
     }
