@@ -27,6 +27,7 @@
     <string name="profile_edad">Edad</string>
     <string name="nombre_equipo">Villaviciosa de Odón C.F.</string>
     <!-- HOME -->
+    <string name="H_cerrar_sesion">Cerrar Sesión</string>
     <string name="H_proxPartido">Próximo Partido</string>
     <string name="H_local">Local</string>
     <string name="H_visitante">Visitante</string>
@@ -40,14 +41,15 @@
     <string name="H_posicion">Posición</string>
     <string name="H_pts">pts.</string>
     <string name="H_dLider">1º:</string>
-    <string name="H_proximosEventos">Ver próximos eventos</string>
+    <string name="H_proximosEventos">Ver calendario</string>
     <string name="H_gestion">Gestión</string>
     <string name="H_clasificacion">Clasificación</string>
     <string name="title_activity_detalles_partido">Map</string>
     <string name="Clasificacion">Clasificación</string>
     <!-- FORGOTPASWD -->
     <string name="has_olvidado_tu_contrase_a">¿Olvidaste tu Contraseña?</string>
-    <string name="texto_forgotpasswd">Escribe tu Email y te llegará un correo con tu nueva contraseña.</string>
+    <string name="texto_forgotpasswd">Introduce tu Email y te llegará un correo con tu nueva contraseña.</string>
     <string name="enviar">Enviar</string>
+
 
 </resources>

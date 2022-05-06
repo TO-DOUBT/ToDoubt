@@ -34,7 +34,13 @@
         <activity
             android:name=".Home"
             android:theme="@style/Theme.ToDoubt"
-            android:exported="true"/>
+            android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity
             android:name=".PlantillaActivity"
             android:label="Plantilla"
@@ -46,11 +52,6 @@
             android:name=".SplashScreenActivity"
             android:theme="@style/Theme.ToDoubt.NoActionBar"
             android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
         </activity>
         <activity
             android:name=".RegisterActivity"

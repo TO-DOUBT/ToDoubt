@@ -18,7 +18,8 @@
             app:menu="@menu/menu_profile"
             app:title="Profile"
             app:titleTextColor="@color/black"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="MissingConstraints"
+            android:fontFamily="@font/actor"/>
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appBar_id"
             android:layout_width="match_parent"
@@ -29,12 +30,14 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
                 <TextView
                     android:id="@+id/textViewUserNameProfile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="170dp"
                     android:layout_marginTop="25dp"
+                    android:fontFamily="@font/actor"
                     android:text="Fede"
                     android:textColor="@color/black"
                     android:textSize="25dp"
@@ -57,7 +60,8 @@
                         android:layout_height="wrap_content"
                         android:text="Villaviciosa de Odón"
                         android:layout_marginStart="10dp"
-                        android:textSize="17sp"/>
+                        android:textSize="17sp"
+                        android:fontFamily="@font/actor"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -77,7 +81,8 @@
                         android:layout_height="wrap_content"
                         android:text="Segunda aficionados"
                         android:layout_marginStart="10dp"
-                        android:textSize="17sp"/>
+                        android:textSize="17sp"
+                        android:fontFamily="@font/actor"/>
                 </LinearLayout>
                 <ImageView
                     android:id="@+id/imageViewProfilePhoto"
@@ -126,7 +131,8 @@
                                 android:textColor="@color/black"
                                 android:textSize="20sp"
                                 android:textStyle="bold"
-                                android:gravity="center_vertical"/>
+                                android:gravity="center_vertical"
+                                android:fontFamily="@font/actor"/>
                             <ImageView
                                 android:id="@+id/img_edit1"
                                 android:layout_width="wrap_content"
@@ -142,6 +148,7 @@
                             android:layout_marginRight="20dp"
                             android:textColorHint="@color/black"
                             app:helperText="@string/profile_nombre_completo"
+                            android:fontFamily="@font/actor"
                             app:helperTextTextColor="@color/black"
                             >
                             <TextView
@@ -151,7 +158,8 @@
                                 android:textSize="16sp"
                                 android:textStyle="bold"
                                 android:maxLines="1"
-                                android:backgroundTint="@color/white"/>
+                                android:backgroundTint="@color/white"
+                                android:fontFamily="@font/actor"/>
                         </com.google.android.material.textfield.TextInputLayout>
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/textInputSurname"
@@ -160,6 +168,7 @@
                             android:layout_marginRight="20dp"
                             android:textColorHint="@color/black"
                             app:helperText="@string/profile_fecha_nac"
+                            android:fontFamily="@font/actor"
                             app:helperTextTextColor="@color/black"
                             >
                             <TextView
@@ -169,7 +178,8 @@
                                 android:textSize="16sp"
                                 android:textStyle="bold"
                                 android:maxLines="1"
-                                android:backgroundTint="@color/black"/>
+                                android:backgroundTint="@color/black"
+                                android:fontFamily="@font/actor"/>
                         </com.google.android.material.textfield.TextInputLayout>
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/textInputPhone"
@@ -178,6 +188,7 @@
                             android:layout_marginRight="20dp"
                             android:textColorHint="@color/black"
                             app:helperText="@string/profile_dni"
+                            android:fontFamily="@font/actor"
                             app:helperTextTextColor="@color/black">
                             <TextView
                                 android:id="@+id/txt_phone"
@@ -186,7 +197,8 @@
                                 android:textSize="16sp"
                                 android:textStyle="bold"
                                 android:maxLines="1"
-                                android:backgroundTint="@color/black"/>
+                                android:backgroundTint="@color/black"
+                                android:fontFamily="@font/actor"/>
                         </com.google.android.material.textfield.TextInputLayout>
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/textInputEdad"
@@ -196,7 +208,8 @@
                             android:layout_marginBottom="20dp"
                             android:textColorHint="@color/black"
                             app:helperText="@string/profile_edad"
-                            app:helperTextTextColor="@color/black">
+                            app:helperTextTextColor="@color/black"
+                            android:fontFamily="@font/actor">
                             <TextView
                                 android:id="@+id/txt_Edad"
                                 style="@style/textoPerfil"
@@ -204,7 +217,8 @@
                                 android:textSize="16sp"
                                 android:textStyle="bold"
                                 android:maxLines="1"
-                                android:backgroundTint="@color/black"/>
+                                android:backgroundTint="@color/black"
+                                android:fontFamily="@font/actor"/>
                         </com.google.android.material.textfield.TextInputLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -233,7 +247,8 @@
                                 android:textColor="@color/black"
                                 android:textSize="20sp"
                                 android:textStyle="bold"
-                                android:gravity="center_vertical"/>
+                                android:gravity="center_vertical"
+                                android:fontFamily="@font/actor"/>
                         </LinearLayout>
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -265,7 +280,8 @@
                                         android:layout_alignEnd="@id/imageViewJornada"
                                         android:layout_alignTop="@id/imageViewJornada"
                                         android:layout_alignBottom="@id/imageViewJornada"
-                                        android:gravity="center"/>
+                                        android:gravity="center"
+                                        android:fontFamily="@font/actor"/>
                                 </RelativeLayout>
                                 <TextView
                                     android:layout_width="105dp"
@@ -275,7 +291,8 @@
                                     android:textSize="20sp"
                                     android:textAlignment="center"
                                     android:text="@string/profile_jornada"
-                                    android:textColor="@color/black"/>
+                                    android:textColor="@color/black"
+                                    android:fontFamily="@font/actor"/>
                             </LinearLayout>
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -302,7 +319,8 @@
                                         android:layout_alignEnd="@id/imageViewConvocado"
                                         android:layout_alignTop="@id/imageViewConvocado"
                                         android:layout_alignBottom="@id/imageViewConvocado"
-                                        android:gravity="center"/>
+                                        android:gravity="center"
+                                        android:fontFamily="@font/actor"/>
                                 </RelativeLayout>
                                 <TextView
                                     android:layout_width="105dp"
@@ -312,7 +330,8 @@
                                     android:textSize="20sp"
                                     android:textAlignment="center"
                                     android:text="@string/profile_convocado"
-                                    android:textColor="@color/black"/>
+                                    android:textColor="@color/black"
+                                    android:fontFamily="@font/actor"/>
                             </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
@@ -344,7 +363,8 @@
                                         android:layout_alignEnd="@id/imageViewTitular"
                                         android:layout_alignTop="@id/imageViewTitular"
                                         android:layout_alignBottom="@id/imageViewTitular"
-                                        android:gravity="center"/>
+                                        android:gravity="center"
+                                        android:fontFamily="@font/actor"/>
                                 </RelativeLayout>
                                 <TextView
                                     android:layout_width="105dp"
@@ -354,7 +374,8 @@
                                     android:textSize="20sp"
                                     android:textAlignment="center"
                                     android:text="@string/profile_titular"
-                                    android:textColor="@color/black"/>
+                                    android:textColor="@color/black"
+                                    android:fontFamily="@font/actor"/>
                             </LinearLayout>
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -381,7 +402,8 @@
                                         android:layout_alignEnd="@id/imageViewGoles"
                                         android:layout_alignTop="@id/imageViewGoles"
                                         android:layout_alignBottom="@id/imageViewGoles"
-                                        android:gravity="center"/>
+                                        android:gravity="center"
+                                        android:fontFamily="@font/actor"/>
                                 </RelativeLayout>
                                 <TextView
                                     android:layout_width="105dp"
@@ -391,7 +413,8 @@
                                     android:textSize="20sp"
                                     android:textAlignment="center"
                                     android:text="@string/profile_goles"
-                                    android:textColor="@color/black"/>
+                                    android:textColor="@color/black"
+                                    android:fontFamily="@font/actor"/>
                             </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
@@ -418,7 +441,8 @@
                                     android:textSize="20sp"
                                     android:textAlignment="center"
                                     android:text="amarillas"
-                                    android:textColor="@color/black"/>
+                                    android:textColor="@color/black"
+                                    android:fontFamily="@font/actor"/>
                             </LinearLayout>
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -439,7 +463,8 @@
                                     android:textSize="20sp"
                                     android:textAlignment="center"
                                     android:text="rojas"
-                                    android:textColor="@color/black"/>
+                                    android:textColor="@color/black"
+                                    android:fontFamily="@font/actor"/>
                             </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>

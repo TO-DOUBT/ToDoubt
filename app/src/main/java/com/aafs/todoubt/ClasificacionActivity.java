@@ -43,7 +43,7 @@ public class ClasificacionActivity extends AppCompatActivity {
                 if(flag==1){
 
                     TextView b3=new TextView(ClasificacionActivity.this);
-                    b3.setText("Posicion\n");
+                    b3.setText("Posición\n");
                     b3.setTextSize(20);
                     tr.addView(b3);
 

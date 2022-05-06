@@ -40,6 +40,9 @@ public class Home extends AppCompatActivity implements HiloPeticionDatos.Interfa
         CV_proximoPartido = findViewById(R.id.home_CV_proximoPartido);
         CV_calendario = findViewById(R.id.home_CV_proximosEventos);
         CV_clasific = findViewById(R.id.home_CV_Clasificacion);
+
+
+        //CV_proximoPartido.setBackgroundResource(R.drawable.bernabeu);
         // Webscrapping
         HiloPeticionDatos h = new HiloPeticionDatos(Home.this);
         Thread t = new Thread(h);
