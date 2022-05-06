@@ -21,7 +21,7 @@
     <string name="profile_fecha_nac">Fecha de Nacimiento</string>
     <string name="profile_dni">Código del Jugador</string>
     <string name="profile_goles">Goles</string>
-    <string name="profile_jornada">Jornadas</string>
+    <string name="profile_jornada">Jugados</string>
     <string name="profile_convocado">Convocado</string>
     <string name="profile_titular">Titular</string>
     <string name="profile_edad">Edad</string>

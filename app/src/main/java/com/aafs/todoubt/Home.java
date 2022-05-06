@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.aafs.todoubt.calendario.FullActivity;
+import com.aafs.todoubt.wsdatos.DetalleEquipo;
 import com.aafs.todoubt.wsdatos.EstadiscasEquipo;
 import com.aafs.todoubt.wsdatos.DatosPartido;
 import com.aafs.todoubt.wsdatos.HiloPeticionDatos;
@@ -28,7 +29,7 @@ public class Home extends AppCompatActivity implements HiloPeticionDatos.Interfa
     private TextView TV_partidosJugados, TV_partidosEmpatados,
             TV_partidosPerdidos, TV_partidosGanados, TV_posicion,
             TV_puntos, TV_lider, TV_proximoPartido;
-    private CardView CV_proximoPartido, CV_calendario, CV_clasific;
+    private CardView CV_proximoPartido, CV_calendario, CV_clasific, CV_gestion;
     private DatosPartido prox_partido;
     private FirebaseAuth mAuth;
     private GoogleSignInClient mGoogleSignInClient;
@@ -51,6 +52,7 @@ public class Home extends AppCompatActivity implements HiloPeticionDatos.Interfa
         CV_proximoPartido = findViewById(R.id.home_CV_proximoPartido);
         CV_calendario = findViewById(R.id.home_CV_proximosEventos);
         CV_clasific = findViewById(R.id.home_CV_Clasificacion);
+        CV_gestion = findViewById(R.id.home_CV_Gestion);
         // Webscrapping
         HiloPeticionDatos h = new HiloPeticionDatos(Home.this);
         Thread t = new Thread(h);
@@ -155,4 +157,21 @@ public class Home extends AppCompatActivity implements HiloPeticionDatos.Interfa
             }
         });
     }
-}
+
+    @Override
+    public void devolverDatosPlantilla(DetalleEquipo data) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                CV_gestion.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent i = new Intent(Home.this, PlantillaActivity.class);
+                        i.putExtra("data", data);
+                        startActivity(i);
+                    }
+                });
+            }
+        });
+
+    }}

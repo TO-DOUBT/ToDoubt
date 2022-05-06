@@ -1,6 +1,8 @@
 package com.aafs.todoubt.wsdatos;
 
-public class DatosJugador {
+import java.io.Serializable;
+
+public class DatosJugador implements Serializable {
 
     private int codigoJugador;
     private String nombreCompleto, edad, partidosConvocados,
@@ -97,4 +99,5 @@ public class DatosJugador {
     public void setLinkJugador(String linkJugador) {
         this.linkJugador = linkJugador;
     }
+
 }

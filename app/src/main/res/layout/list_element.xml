@@ -40,17 +40,6 @@
 
             </HorizontalScrollView>
 
-            <TextView
-                android:id="@+id/txt_dorsal_jugador"
-                android:layout_width="45dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginStart="70dp"
-                android:fontFamily="@font/actor"
-                android:inputType="number"
-                android:text="8"
-                android:textSize="15dp" />
-
         </LinearLayout>
     </LinearLayout>
 

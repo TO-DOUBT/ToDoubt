@@ -1,9 +1,10 @@
 package com.aafs.todoubt.wsdatos;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DetalleEquipo {
+public class DetalleEquipo implements Serializable {
 
     private List<DatosJugador> jugadoresEquipo;
 

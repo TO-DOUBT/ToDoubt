@@ -29,13 +29,13 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
                 <TextView
                     android:id="@+id/textViewUserNameProfile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="170dp"
                     android:layout_marginTop="25dp"
-                    android:text="Fede"
                     android:textColor="@color/black"
                     android:textSize="25dp"
                     android:textStyle="bold" />
@@ -98,35 +98,40 @@
                 android:layout_height="wrap_content"
                 android:background="@color/fondo"
                 android:orientation="vertical">
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="310dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="15dp"
-                    android:layout_marginLeft="15dp"
                     android:layout_marginBottom="20dp"
                     app:cardCornerRadius="8dp"
                     tools:ignore="MissingConstraints">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
                             tools:ignore="UseCompoundDrawables">
+
                             <TextView
                                 android:id="@+id/txt_datos_personales"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="20dp"
                                 android:layout_marginTop="20dp"
+                                android:gravity="center_vertical"
                                 android:text="@string/profile_info"
                                 android:textColor="@color/black"
                                 android:textSize="20sp"
-                                android:textStyle="bold"
-                                android:gravity="center_vertical"/>
+                                android:textStyle="bold" />
+
                             <ImageView
                                 android:id="@+id/img_edit1"
                                 android:layout_width="wrap_content"
@@ -135,6 +140,7 @@
                                 android:layout_marginTop="23dp"
                                 app:srcCompat="@drawable/ic_toolbar_edit" />
                         </LinearLayout>
+
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/textInputName"
                             style="@style/parent"
@@ -142,35 +148,17 @@
                             android:layout_marginRight="20dp"
                             android:textColorHint="@color/black"
                             app:helperText="@string/profile_nombre_completo"
-                            app:helperTextTextColor="@color/black"
-                            >
+                            app:helperTextTextColor="@color/black">
+
                             <TextView
                                 android:id="@+id/txt_name"
                                 style="@style/textoPerfil"
-                                android:text="Federico Díaz Bellesón"
-                                android:textSize="16sp"
-                                android:textStyle="bold"
+                                android:backgroundTint="@color/white"
                                 android:maxLines="1"
-                                android:backgroundTint="@color/white"/>
-                        </com.google.android.material.textfield.TextInputLayout>
-                        <com.google.android.material.textfield.TextInputLayout
-                            android:id="@+id/textInputSurname"
-                            style="@style/parent"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginRight="20dp"
-                            android:textColorHint="@color/black"
-                            app:helperText="@string/profile_fecha_nac"
-                            app:helperTextTextColor="@color/black"
-                            >
-                            <TextView
-                                android:id="@+id/txt_surname"
-                                style="@style/textoPerfil"
-                                android:text="15/02/2000"
                                 android:textSize="16sp"
-                                android:textStyle="bold"
-                                android:maxLines="1"
-                                android:backgroundTint="@color/black"/>
+                                android:textStyle="bold" />
                         </com.google.android.material.textfield.TextInputLayout>
+
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/textInputPhone"
                             style="@style/parent"
@@ -179,15 +167,16 @@
                             android:textColorHint="@color/black"
                             app:helperText="@string/profile_dni"
                             app:helperTextTextColor="@color/black">
+
                             <TextView
                                 android:id="@+id/txt_phone"
                                 style="@style/textoPerfil"
-                                android:text="67894567L"
-                                android:textSize="16sp"
-                                android:textStyle="bold"
+                                android:backgroundTint="@color/black"
                                 android:maxLines="1"
-                                android:backgroundTint="@color/black"/>
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
                         </com.google.android.material.textfield.TextInputLayout>
+
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/textInputEdad"
                             style="@style/parent"
@@ -197,14 +186,14 @@
                             android:textColorHint="@color/black"
                             app:helperText="@string/profile_edad"
                             app:helperTextTextColor="@color/black">
+
                             <TextView
                                 android:id="@+id/txt_Edad"
                                 style="@style/textoPerfil"
-                                android:text="22"
-                                android:textSize="16sp"
-                                android:textStyle="bold"
+                                android:backgroundTint="@color/black"
                                 android:maxLines="1"
-                                android:backgroundTint="@color/black"/>
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
                         </com.google.android.material.textfield.TextInputLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -254,28 +243,29 @@
                                         android:layout_marginTop="23dp"
                                         android:src="@drawable/bola_estadistica">
                                     </ImageView>
+
                                     <TextView
-                                        android:id="@+id/numJornadaProfile"
-                                        android:layout_height="wrap_content"
+                                        android:id="@+id/numConvProfile"
                                         android:layout_width="0dp"
-                                        android:text="15"
-                                        android:textSize="45sp"
-                                        android:textColor="@color/black"
+                                        android:layout_height="wrap_content"
                                         android:layout_alignStart="@id/imageViewJornada"
-                                        android:layout_alignEnd="@id/imageViewJornada"
                                         android:layout_alignTop="@id/imageViewJornada"
+                                        android:layout_alignEnd="@id/imageViewJornada"
                                         android:layout_alignBottom="@id/imageViewJornada"
-                                        android:gravity="center"/>
+                                        android:gravity="center"
+                                        android:textColor="@color/black"
+                                        android:textSize="45sp" />
                                 </RelativeLayout>
+
                                 <TextView
                                     android:layout_width="105dp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="30dp"
                                     android:layout_marginTop="5dp"
-                                    android:textSize="20sp"
+                                    android:text="@string/profile_convocado"
                                     android:textAlignment="center"
-                                    android:text="@string/profile_jornada"
-                                    android:textColor="@color/black"/>
+                                    android:textColor="@color/black"
+                                    android:textSize="20sp" />
                             </LinearLayout>
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -291,28 +281,29 @@
                                         android:layout_marginStart="70dp"
                                         android:layout_marginTop="23dp"
                                         android:src="@drawable/bola_estadistica"/>
+
                                     <TextView
-                                        android:id="@+id/numConvocadoProfile"
-                                        android:layout_height="wrap_content"
+                                        android:id="@+id/numJugaProfile"
                                         android:layout_width="0dp"
-                                        android:text="15"
-                                        android:textSize="45sp"
-                                        android:textColor="@color/black"
+                                        android:layout_height="wrap_content"
                                         android:layout_alignStart="@id/imageViewConvocado"
-                                        android:layout_alignEnd="@id/imageViewConvocado"
                                         android:layout_alignTop="@id/imageViewConvocado"
+                                        android:layout_alignEnd="@id/imageViewConvocado"
                                         android:layout_alignBottom="@id/imageViewConvocado"
-                                        android:gravity="center"/>
+                                        android:gravity="center"
+                                        android:textColor="@color/black"
+                                        android:textSize="45sp" />
                                 </RelativeLayout>
+
                                 <TextView
                                     android:layout_width="105dp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="70dp"
                                     android:layout_marginTop="5dp"
-                                    android:textSize="20sp"
+                                    android:text="@string/profile_jornada"
                                     android:textAlignment="center"
-                                    android:text="@string/profile_convocado"
-                                    android:textColor="@color/black"/>
+                                    android:textColor="@color/black"
+                                    android:textSize="20sp" />
                             </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
@@ -333,18 +324,18 @@
                                         android:layout_marginStart="30dp"
                                         android:layout_marginTop="23dp"
                                         android:src="@drawable/bola_estadistica"/>
+
                                     <TextView
                                         android:id="@+id/numTitularProfile"
-                                        android:layout_height="wrap_content"
                                         android:layout_width="0dp"
-                                        android:text="14"
-                                        android:textSize="45sp"
-                                        android:textColor="@color/black"
+                                        android:layout_height="wrap_content"
                                         android:layout_alignStart="@id/imageViewTitular"
-                                        android:layout_alignEnd="@id/imageViewTitular"
                                         android:layout_alignTop="@id/imageViewTitular"
+                                        android:layout_alignEnd="@id/imageViewTitular"
                                         android:layout_alignBottom="@id/imageViewTitular"
-                                        android:gravity="center"/>
+                                        android:gravity="center"
+                                        android:textColor="@color/black"
+                                        android:textSize="45sp" />
                                 </RelativeLayout>
                                 <TextView
                                     android:layout_width="105dp"
@@ -370,18 +361,18 @@
                                         android:layout_marginStart="70dp"
                                         android:layout_marginTop="23dp"
                                         android:src="@drawable/bola_estadistica"/>
+
                                     <TextView
                                         android:id="@+id/numGolesProfile"
-                                        android:layout_height="wrap_content"
                                         android:layout_width="0dp"
-                                        android:text="1"
-                                        android:textSize="45sp"
-                                        android:textColor="@color/black"
+                                        android:layout_height="wrap_content"
                                         android:layout_alignStart="@id/imageViewGoles"
-                                        android:layout_alignEnd="@id/imageViewGoles"
                                         android:layout_alignTop="@id/imageViewGoles"
+                                        android:layout_alignEnd="@id/imageViewGoles"
                                         android:layout_alignBottom="@id/imageViewGoles"
-                                        android:gravity="center"/>
+                                        android:gravity="center"
+                                        android:textColor="@color/black"
+                                        android:textSize="45sp" />
                                 </RelativeLayout>
                                 <TextView
                                     android:layout_width="105dp"
@@ -410,15 +401,16 @@
                                     android:layout_marginStart="30dp"
                                     android:layout_marginTop="23dp"
                                     android:src="@drawable/amarillo"/>
+
                                 <TextView
+                                    android:id="@+id/txtAmarillaProf"
                                     android:layout_width="105dp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="30dp"
                                     android:layout_marginTop="5dp"
-                                    android:textSize="20sp"
                                     android:textAlignment="center"
-                                    android:text="amarillas"
-                                    android:textColor="@color/black"/>
+                                    android:textColor="@color/black"
+                                    android:textSize="20sp" />
                             </LinearLayout>
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -431,15 +423,16 @@
                                     android:layout_marginStart="70dp"
                                     android:layout_marginTop="23dp"
                                     android:src="@drawable/roja"/>
+
                                 <TextView
+                                    android:id="@+id/txtRojaProf"
                                     android:layout_width="105dp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="70dp"
                                     android:layout_marginTop="5dp"
-                                    android:textSize="20sp"
                                     android:textAlignment="center"
-                                    android:text="rojas"
-                                    android:textColor="@color/black"/>
+                                    android:textColor="@color/black"
+                                    android:textSize="20sp" />
                             </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>

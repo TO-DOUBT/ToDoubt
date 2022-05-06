@@ -95,9 +95,8 @@ public class PeticionDatos {
                     a.setLinkDetalle(headline.child(0).child(1).child(1).child(0).child(0).attr("href"));
                    contador++;
                }
-
             }
-            a.getClasificacion().add(headline.child(0).child(1).child(1).text());
+            a.getClasificacion().add(headline.child(0).child(1).child(1).text() + ";" + headline.child(1).child(0).text());
         }
         return a;
     }
@@ -119,7 +118,6 @@ public class PeticionDatos {
                     // Acta
                     aux.setResultado(headline.child(1).child(i).child(1).child(0).child(0).text());
                     aux.setActaPartido(headline.child(1).child(i).child(1).child(0).child(1).child(0).attr("href"));
-
                 }
             }
             b.add(aux);

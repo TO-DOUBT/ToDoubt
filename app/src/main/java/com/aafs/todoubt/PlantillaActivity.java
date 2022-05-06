@@ -10,11 +10,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.RadioButton;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 
+import com.aafs.todoubt.plantilla.EditarFilasPlantillaActivity;
+import com.aafs.todoubt.plantilla.ListAdapter;
+import com.aafs.todoubt.wsdatos.DatosJugador;
+import com.aafs.todoubt.wsdatos.DetalleEquipo;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.util.ArrayList;
@@ -24,10 +27,11 @@ public class PlantillaActivity extends AppCompatActivity implements SearchView.O
 
     private ListAdapter listAdapter;
     private RecyclerView recyclerView;
-    private List<ListElement> items;
+    private List<DatosJugador> items;
     private SearchView buscador_plantilla_jugadores;
-    private Button btn_aniadir_jugador;
-
+    //private Button btn_aniadir_jugador;
+    private DetalleEquipo plantilla;
+    private ImageButton bck_btn;
 
 
 
@@ -35,14 +39,12 @@ public class PlantillaActivity extends AppCompatActivity implements SearchView.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plantilla);
-        btn_aniadir_jugador = findViewById(R.id.btn_aniadir_jugador_plantilla);
+        //btn_aniadir_jugador = findViewById(R.id.btn_aniadir_jugador_plantilla);
+        bck_btn = findViewById(R.id.plan_bck_btn);
 
+        plantilla = (DetalleEquipo) getIntent().getSerializableExtra("data");
 
-
-
-
-
-        btn_aniadir_jugador.setOnClickListener(new View.OnClickListener() {
+        /*btn_aniadir_jugador.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -54,15 +56,17 @@ public class PlantillaActivity extends AppCompatActivity implements SearchView.O
                                 R.layout.bottom_sheet,
                                 (ConstraintLayout)findViewById(R.id.bottomSheetContainer)
                         );
-
-
-
                 bottomSheetDialog.setContentView(bottomSheetView);
                 bottomSheetDialog.show();
+            }
+        });*/
 
+        bck_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
-
         initViews();
         initValues();
         initListener();
@@ -89,30 +93,11 @@ public class PlantillaActivity extends AppCompatActivity implements SearchView.O
        private void initListener(){
         buscador_plantilla_jugadores.setOnQueryTextListener(this);
        }
-    public List<ListElement> getItems(){
-
-        List<ListElement> elements = new ArrayList<>();
-        elements.add(new ListElement("Sebastián Huete Londoño", "11"));
-        elements.add(new ListElement("Álvaro Tuñón Berlanga", "2"));
-        elements.add(new ListElement("Fran Ruiz Joya", "10"));
-        elements.add(new ListElement("Andrés Parra Esteberanz", "3"));
-        elements.add(new ListElement("Juan Antonio Valenciaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "7"));
-        elements.add(new ListElement("Aaron Tome Martín", "4"));
-        elements.add(new ListElement("Luis Enrique Alcaraz", "20"));
-        elements.add(new ListElement("Sebastián Huete Londoño", "11"));
-        elements.add(new ListElement("Álvaro Tuñón Berlanga", "2"));
-        elements.add(new ListElement("Fran Ruiz Joya", "10"));
-        elements.add(new ListElement("Andrés Parra Esteberanz", "3"));
-        elements.add(new ListElement("Juan Antonio Valencia", "7"));
-        elements.add(new ListElement("Aaron Tome Martín", "4"));
-        elements.add(new ListElement("Luis Enrique Alcarazzzzzzzzzzzzzzzzzz", "20"));
-        elements.add(new ListElement("Sebastián Huete Londoño", "11"));
-        elements.add(new ListElement("Álvaro Tuñón Berlanga", "2"));
-        elements.add(new ListElement("Fran Ruiz Joya", "10"));
-        elements.add(new ListElement("Andrés Parra Esteberanz", "3"));
-        elements.add(new ListElement("Juan Antonio Valencia", "7"));
-        elements.add(new ListElement("Aaron Tome Martín", "4"));
-        elements.add(new ListElement("Luis Enrique Alcaraz", "20"));
+    public List<DatosJugador> getItems(){
+        List<DatosJugador> elements = new ArrayList<>();
+        for (DatosJugador as : plantilla.getJugadoresEquipo()) {
+          elements.add(as);
+        }
 
         return elements;
     }
@@ -129,8 +114,8 @@ public class PlantillaActivity extends AppCompatActivity implements SearchView.O
     }
 
     @Override
-    public void itemClick(ListElement item) {
-        Intent intent = new Intent(this,EditarFilasPlantillaActivity.class);
+    public void itemClick(DatosJugador item) {
+        Intent intent = new Intent(this, ProfileActivity.class);
         intent.putExtra("listElement", item);
         startActivity(intent);
     }
