@@ -42,7 +42,7 @@
         android:background="@drawable/buscador"
         app:iconifiedByDefault="false"
         android:queryBackground="@android:color/transparent"
-        app:queryHint="Buscar jugador"
+        app:queryHint="@string/hint_buscador"
         app:layout_constraintEnd_toEndOf="@+id/guideLineEnd"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/guideLineStart"
@@ -80,7 +80,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/actor"
-                android:text="Nombre Completo"
+                android:text="@string/titulo_tabla"
                 android:textColor="@color/white"
                 android:textSize="17dp"
                 />
@@ -189,7 +189,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:text="Para ver las característas de un jugador específico presione en la fila correspondiente"
+            android:text="@string/mensaje"
             android:textSize="12dp"
             android:fontFamily="@font/actor"/>
 
