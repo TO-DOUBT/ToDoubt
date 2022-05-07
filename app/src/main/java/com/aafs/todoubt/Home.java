@@ -23,7 +23,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Home extends AppCompatActivity implements HiloPeticionDatos.InterfazDatos {
     private TextView TV_partidosJugados, TV_partidosEmpatados,

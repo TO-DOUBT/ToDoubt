@@ -10,8 +10,6 @@ import android.widget.EditText;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-import java.util.Date;
-
 public class PerfilJugador extends AppCompatActivity {
 
     private CheckBox jugadorBox, entrenadorBox, chicaBox, chicoBox;

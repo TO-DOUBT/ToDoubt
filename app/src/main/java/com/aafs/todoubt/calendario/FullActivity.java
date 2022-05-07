@@ -15,11 +15,8 @@ import com.aafs.todoubt.wsdatos.DatosPartido;
 import com.haibin.calendarview.Calendar;
 import com.haibin.calendarview.CalendarView;
 
-import com.haibin.*;
-
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class FullActivity extends BaseActivity implements

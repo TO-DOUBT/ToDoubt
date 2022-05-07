@@ -1,11 +1,7 @@
 package com.aafs.todoubt.wsdatos;
 
-import android.util.Log;
-
 import com.aafs.todoubt.Home;
-
 import java.util.ArrayList;
-import java.util.List;
 
 public class HiloPeticionDatos implements Runnable {
 
