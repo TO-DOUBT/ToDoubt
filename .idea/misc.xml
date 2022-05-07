@@ -3,16 +3,31 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/usuario/AndroidStudioProjects/ToDoubt/app/src/main/res/drawable/ic_logout.xml" value="0.187" />
-        <entry key="..\:/Users/usuario/AndroidStudioProjects/ToDoubt/app/src/main/res/drawable/ic_settings.xml" value="0.187" />
-        <entry key="..\:/Users/usuario/AndroidStudioProjects/ToDoubt/app/src/main/res/layout/activity_editar_filas_plantilla.xml" value="0.25" />
-        <entry key="..\:/Users/usuario/AndroidStudioProjects/ToDoubt/app/src/main/res/layout/activity_forgot_password.xml" value="0.33" />
-        <entry key="..\:/Users/usuario/AndroidStudioProjects/ToDoubt/app/src/main/res/layout/activity_home.xml" value="0.25" />
-        <entry key="..\:/Users/usuario/AndroidStudioProjects/ToDoubt/app/src/main/res/layout/activity_login.xml" value="0.22" />
-        <entry key="..\:/Users/usuario/AndroidStudioProjects/ToDoubt/app/src/main/res/layout/activity_perfil_jugador.xml" value="0.18" />
-        <entry key="..\:/Users/usuario/AndroidStudioProjects/ToDoubt/app/src/main/res/layout/activity_profile.xml" value="0.22" />
+        <entry key="..\:/Users/parra/ToDoubt/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2985" />
+        <entry key="..\:/Users/parra/ToDoubt/app/src/main/res/layout/activity_home.xml" value="0.3484375" />
+        <entry key="..\:/Users/parra/ToDoubt/app/src/main/res/layout/activity_login.xml" value="0.2" />
+        <entry key="..\:/Users/parra/ToDoubt/app/src/main/res/layout/activity_main.xml" value="0.2441123188405797" />
+        <entry key="..\:/Users/parra/ToDoubt/app/src/main/res/layout/activity_perfil_jugador.xml" value="0.264" />
+        <entry key="..\:/Users/parra/ToDoubt/app/src/main/res/layout/activity_plantilla.xml" value="0.2441123188405797" />
+        <entry key="..\:/Users/sseba/Desktop/Sebas/Ingenieria Informatica/Proyecto Ingenieria/proyecto/ToDoubt/app/src/main/res/drawable/buscador.xml" value="0.165" />
+        <entry key="..\:/Users/sseba/Desktop/Sebas/Ingenieria Informatica/Proyecto Ingenieria/proyecto/ToDoubt/app/src/main/res/drawable/cardview_background.xml" value="0.2075" />
+        <entry key="..\:/Users/sseba/Desktop/Sebas/Ingenieria Informatica/Proyecto Ingenieria/proyecto/ToDoubt/app/src/main/res/drawable/toolbar_style.xml" value="0.165" />
+        <entry key="..\:/Users/sseba/Desktop/Sebas/Ingenieria Informatica/Proyecto Ingenieria/proyecto/ToDoubt/app/src/main/res/layout/activity_calendario.xml" value="0.16485507246376813" />
+        <entry key="..\:/Users/sseba/Desktop/Sebas/Ingenieria Informatica/Proyecto Ingenieria/proyecto/ToDoubt/app/src/main/res/layout/activity_clasificacion.xml" value="0.25" />
+        <entry key="..\:/Users/sseba/Desktop/Sebas/Ingenieria Informatica/Proyecto Ingenieria/proyecto/ToDoubt/app/src/main/res/layout/activity_detalle_partido.xml" value="0.1" />
+        <entry key="..\:/Users/sseba/Desktop/Sebas/Ingenieria Informatica/Proyecto Ingenieria/proyecto/ToDoubt/app/src/main/res/layout/activity_editar_filas_plantilla.xml" value="0.25" />
+        <entry key="..\:/Users/sseba/Desktop/Sebas/Ingenieria Informatica/Proyecto Ingenieria/proyecto/ToDoubt/app/src/main/res/layout/activity_forgot_password.xml" value="0.33" />
+        <entry key="..\:/Users/sseba/Desktop/Sebas/Ingenieria Informatica/Proyecto Ingenieria/proyecto/ToDoubt/app/src/main/res/layout/activity_home.xml" value="0.2" />
+        <entry key="..\:/Users/sseba/Desktop/Sebas/Ingenieria Informatica/Proyecto Ingenieria/proyecto/ToDoubt/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Users/sseba/Desktop/Sebas/Ingenieria Informatica/Proyecto Ingenieria/proyecto/ToDoubt/app/src/main/res/layout/activity_perfil_jugador.xml" value="0.2" />
+        <entry key="..\:/Users/sseba/Desktop/Sebas/Ingenieria Informatica/Proyecto Ingenieria/proyecto/ToDoubt/app/src/main/res/layout/activity_plantilla.xml" value="0.33" />
+        <entry key="..\:/Users/sseba/Desktop/Sebas/Ingenieria Informatica/Proyecto Ingenieria/proyecto/ToDoubt/app/src/main/res/layout/activity_profile.xml" value="0.25" />
+        <entry key="..\:/Users/sseba/Desktop/Sebas/Ingenieria Informatica/Proyecto Ingenieria/proyecto/ToDoubt/app/src/main/res/layout/activity_register.xml" value="0.2" />
+        <entry key="..\:/Users/sseba/Desktop/Sebas/Ingenieria Informatica/Proyecto Ingenieria/proyecto/ToDoubt/app/src/main/res/layout/activity_splash_screen.xml" value="0.2" />
+        <entry key="..\:/Users/sseba/Desktop/Sebas/Ingenieria Informatica/Proyecto Ingenieria/proyecto/ToDoubt/app/src/main/res/layout/bottom_sheet.xml" value="0.2" />
+        <entry key="..\:/Users/sseba/Desktop/Sebas/Ingenieria Informatica/Proyecto Ingenieria/proyecto/ToDoubt/app/src/main/res/layout/list_element.xml" value="0.2" />
+        <entry key="..\:/Users/usuario/AndroidStudioProjects/ToDoubt/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/usuario/AndroidStudioProjects/ToDoubt/app/src/main/res/layout/activity_register.xml" value="0.25" />
-        <entry key="..\:/Users/usuario/AndroidStudioProjects/ToDoubt/app/src/main/res/menu/menu_profile.xml" value="0.17864583333333334" />
       </map>
     </option>
   </component>

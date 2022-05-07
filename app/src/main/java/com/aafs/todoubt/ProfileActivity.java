@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.aafs.todoubt.wsdatos.DatosJugador;
@@ -17,6 +19,8 @@ public class ProfileActivity extends AppCompatActivity implements HiloPeticionJu
     private TextView TV_nombreCompleto, TV_edad, TV_partidosConvocados,
             TV_partidosJugados, TV_partidosTitular, TV_goles,
             TV_tarjetasAmarillas, TV_tarjetasRojas, TV_cod, TV_username;
+    private ImageButton back;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,11 +37,19 @@ public class ProfileActivity extends AppCompatActivity implements HiloPeticionJu
         TV_tarjetasRojas = findViewById(R.id.txtRojaProf);
         TV_cod = findViewById(R.id.txt_phone);
         TV_username = findViewById(R.id.textViewUserNameProfile);
+        back = findViewById(R.id.perfil_cl_bck_btn);
         // Webscrapping
         HiloPeticionJugador h = new HiloPeticionJugador(ProfileActivity.this, datos);
         Thread t = new Thread(h);
         t.start();
 
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     public String upperLetter(String str){

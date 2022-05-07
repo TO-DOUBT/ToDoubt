@@ -5,16 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Home">
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_home"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/white"
-        app:title=" "
+        android:fontFamily="@font/actor"
+        android:elevation="1dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/menu_profile"
+        app:title=" "
         app:titleTextColor="@color/black"
-        tools:ignore="MissingConstraints"
-        android:fontFamily="@font/actor"/>
+        tools:ignore="MissingConstraints" />
     <TextView
         android:id="@+id/home_ProximoPartido_txt2"
         android:layout_width="0dp"
@@ -32,7 +35,7 @@
 
     <TextView
         android:id="@+id/home_ProximoPartido_txt3"
-        android:layout_width="74dp"
+        android:layout_width="78dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:gravity="center"
@@ -231,21 +234,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="21dp" />
+        app:layout_constraintGuide_begin="56dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/home_gd_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="104dp" />
+        app:layout_constraintGuide_begin="131dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/home_gd_4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="279dp" />
+        app:layout_constraintGuide_begin="284dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/home_gd_5"
@@ -259,7 +262,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="315dp" />
+        app:layout_constraintGuide_begin="323dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/home_gd_7"
@@ -273,28 +276,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="547dp" />
+        app:layout_constraintGuide_begin="556dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/home_gd_entre_2parte_3parte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="540dp" />
+        app:layout_constraintGuide_begin="548dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/home_gd_9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="428dp" />
+        app:layout_constraintGuide_begin="442dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/home_gd_entre_mitad_2parte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="418dp" />
+        app:layout_constraintGuide_begin="427dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/home_gd_10"
@@ -308,14 +311,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="635dp" />
+        app:layout_constraintGuide_begin="643dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/home_gd_12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="715dp" />
+        app:layout_constraintGuide_begin="730dp" />
 
     <TextView
         android:id="@+id/home_NombreEquipo"
@@ -476,7 +479,7 @@
         android:gravity="center"
         android:textColor="@color/black"
         android:textSize="30sp"
-        android:text="3"
+        android:text=""
         app:layout_constraintBottom_toTopOf="@+id/home_gd_entre_mitad_2parte"
         app:layout_constraintEnd_toStartOf="@+id/home_posicion_txt"
         app:layout_constraintStart_toStartOf="@+id/home_gd_10"
@@ -490,7 +493,7 @@
 
         android:layout_marginTop="24dp"
         android:gravity="center"
-        android:text="12"
+        android:text=""
         android:textColor="@color/black"
         android:textSize="30sp"
         app:layout_constraintEnd_toStartOf="@+id/home_puntos_txt_3"
@@ -714,7 +717,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/campo"
+                android:src="@drawable/botas"
                 android:scaleType="centerCrop"/>
 
             <View
