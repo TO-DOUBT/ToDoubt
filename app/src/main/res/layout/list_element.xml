@@ -36,7 +36,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/actor"
                     android:text="Sebastián Huete Londoño"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                   />
 
             </HorizontalScrollView>
 

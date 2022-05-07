@@ -256,8 +256,9 @@
                                         android:layout_alignEnd="@id/imageViewJornada"
                                         android:layout_alignBottom="@id/imageViewJornada"
                                         android:gravity="center"
+                                        android:text=""
                                         android:textColor="@color/black"
-                                        android:textSize="45sp" />
+                                        android:textSize="30sp" />
                                 </RelativeLayout>
 
                                 <TextView
@@ -268,7 +269,7 @@
                                     android:text="@string/profile_convocado"
                                     android:textAlignment="center"
                                     android:textColor="@color/black"
-                                    android:textSize="20sp"
+                                    android:textSize="15sp"
                                     android:fontFamily="@font/actor"/>
                             </LinearLayout>
                             <LinearLayout
@@ -296,7 +297,7 @@
                                         android:layout_alignBottom="@id/imageViewConvocado"
                                         android:gravity="center"
                                         android:textColor="@color/black"
-                                        android:textSize="45sp" />
+                                        android:textSize="30sp" />
                                 </RelativeLayout>
 
                                 <TextView
@@ -307,7 +308,7 @@
                                     android:text="@string/profile_jornada"
                                     android:textAlignment="center"
                                     android:textColor="@color/black"
-                                    android:textSize="20sp"
+                                    android:textSize="15sp"
                                     android:fontFamily="@font/actor"/>
                             </LinearLayout>
                         </LinearLayout>
@@ -340,14 +341,14 @@
                                         android:layout_alignBottom="@id/imageViewTitular"
                                         android:gravity="center"
                                         android:textColor="@color/black"
-                                        android:textSize="45sp"/>
+                                        android:textSize="30sp" />
                                 </RelativeLayout>
                                 <TextView
                                     android:layout_width="105dp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="30dp"
                                     android:layout_marginTop="5dp"
-                                    android:textSize="20sp"
+                                    android:textSize="15sp"
                                     android:textAlignment="center"
                                     android:text="@string/profile_titular"
                                     android:textColor="@color/black"
@@ -378,14 +379,14 @@
                                         android:layout_alignBottom="@id/imageViewGoles"
                                         android:gravity="center"
                                         android:textColor="@color/black"
-                                        android:textSize="45sp"/>
+                                        android:textSize="30sp"/>
                                 </RelativeLayout>
                                 <TextView
                                     android:layout_width="105dp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="70dp"
                                     android:layout_marginTop="5dp"
-                                    android:textSize="20sp"
+                                    android:textSize="15sp"
                                     android:textAlignment="center"
                                     android:text="@string/profile_goles"
                                     android:textColor="@color/black"
