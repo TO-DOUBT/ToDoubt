@@ -10,14 +10,17 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar_profile"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/white"
-            app:title="Profile"
-            app:titleTextColor="@color/black"
-            tools:ignore="MissingConstraints" />
+        <ImageButton
+            android:id="@+id/dp_bck_button_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/trans"
+            app:layout_constraintBottom_toTopOf="@+id/dp_gd_7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appBar_id"
             android:layout_width="match_parent"
@@ -172,8 +175,7 @@
                                 android:backgroundTint="@color/black"
                                 android:maxLines="1"
                                 android:textSize="16sp"
-                                android:textStyle="bold"
-                                android:fontFamily="@font/actor"/>
+                                android:textStyle="bold"/>
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
@@ -193,8 +195,7 @@
                                 android:backgroundTint="@color/black"
                                 android:maxLines="1"
                                 android:textSize="16sp"
-                                android:textStyle="bold"
-                                android:fontFamily="@font/actor"/>
+                                android:textStyle="bold"/>
                         </com.google.android.material.textfield.TextInputLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>

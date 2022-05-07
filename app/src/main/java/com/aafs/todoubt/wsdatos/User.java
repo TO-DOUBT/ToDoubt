@@ -1,4 +1,4 @@
-package com.aafs.todoubt;
+package com.aafs.todoubt.wsdatos;
 
 public class User {
     private String userId,email;

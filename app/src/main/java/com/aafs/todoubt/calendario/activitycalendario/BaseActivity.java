@@ -36,9 +36,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         initData();
     }
 
-    /**
-     * 设置小米黑色状态栏字体
-     */
     @SuppressLint("PrivateApi")
     private void setMIUIStatusBarDarkMode() {
         if (isMiUi) {
@@ -55,11 +52,6 @@ public abstract class BaseActivity extends AppCompatActivity {
             }
         }
     }
-
-    /*
-     * 静态域，获取系统版本是否基于MIUI
-     */
-
     static {
         try {
             @SuppressLint("PrivateApi") Class<?> sysClass = Class.forName("android.os.SystemProperties");
@@ -70,16 +62,6 @@ public abstract class BaseActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-
-
-    /**
-     * 设置魅族手机状态栏图标颜色风格
-     * 可以用来判断是否为Flyme用户
-     *
-     * @param window 需要设置的窗口
-     * @param dark   是否把状态栏字体及图标颜色设置为深色
-     * @return boolean 成功执行返回true
-     */
     @SuppressWarnings("JavaReflectionMemberAccess")
     public static boolean setMeiZuDarkMode(Window window, boolean dark) {
         boolean result = false;
@@ -127,7 +109,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
         return result;
     }
-
 
     @SuppressLint("InlinedApi")
     protected void setStatusBarDarkMode() {

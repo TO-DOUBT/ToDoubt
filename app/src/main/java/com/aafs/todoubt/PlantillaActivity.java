@@ -2,23 +2,17 @@ package com.aafs.todoubt;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 
-import com.aafs.todoubt.plantilla.EditarFilasPlantillaActivity;
 import com.aafs.todoubt.plantilla.ListAdapter;
 import com.aafs.todoubt.wsdatos.DatosJugador;
 import com.aafs.todoubt.wsdatos.DetalleEquipo;
-import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.util.ArrayList;
 import java.util.List;

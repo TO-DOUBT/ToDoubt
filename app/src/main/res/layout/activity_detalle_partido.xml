@@ -21,6 +21,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/campo"
+                android:scaleType="centerCrop"/>
+
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/dp_gd_3"
                 android:layout_width="wrap_content"
