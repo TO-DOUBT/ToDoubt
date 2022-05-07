@@ -55,7 +55,13 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.RecyclerHolder
 
         //holder.dorsalJugador.setText(String.valueOf(item.getCodigoJugador()));
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+        holder.fila_jugadores.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                itemClick.itemClick(item);
+            }
+        });
+        holder.nombreJugador.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 itemClick.itemClick(item);
@@ -117,6 +123,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.RecyclerHolder
     public static class RecyclerHolder extends RecyclerView.ViewHolder{
 
         private TextView nombreJugador;
+        private LinearLayout fila_jugadores;
         //private TextView dorsalJugador;
 
 
@@ -124,6 +131,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.RecyclerHolder
         public RecyclerHolder(@NonNull View itemView) {
             super(itemView);
             nombreJugador = itemView.findViewById(R.id.txt_nombre_completo_jugador);
+            fila_jugadores = itemView.findViewById(R.id.linear_fila_jugador_plantilla);
 
             //dorsalJugador = itemView.findViewById(R.id.txt_dorsal_jugador);
 
