@@ -36,35 +36,39 @@
 
     <androidx.appcompat.widget.SearchView
         android:id="@+id/buscador_plantilla"
-        android:layout_width="370dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
         android:background="@drawable/buscador"
         app:iconifiedByDefault="false"
+        android:queryBackground="@android:color/transparent"
+        app:queryHint="Buscar jugador"
         app:layout_constraintEnd_toEndOf="@+id/guideLineEnd"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/guideLineStart"
         app:layout_constraintTop_toTopOf="parent"
-        app:queryHint="Buscar jugador" />
+        app:layout_constraintBottom_toBottomOf="@+id/guideLine_entre_searchview_titulo"
+
+        />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView_titulo_plantilla"
-        android:layout_width="370dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:cardCornerRadius="8dp"
-    android:layout_marginTop="30dp"
         app:cardElevation="5dp"
         app:cardBackgroundColor="@color/orange_detail_light"
         app:layout_constraintEnd_toEndOf="@id/guideLineEnd"
         app:layout_constraintStart_toStartOf="@id/guideLineStart"
-        app:layout_constraintTop_toBottomOf="@+id/buscador_plantilla">
+        app:layout_constraintTop_toBottomOf="@+id/guideLine_entre_searchview_titulo"
+        app:layout_constraintBottom_toBottomOf="@+id/guideLineRecyclerTop">
 
         <LinearLayout
             android:id="@+id/linear_titulo_plantilla"
-            android:layout_width="366dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center|center_horizontal"
             android:padding="15dp"
+            android:gravity="center"
             app:cardBackgroundColor="@color/orange_detail_light"
             app:layout_constraintEnd_toStartOf="@+id/guideLineEnd"
             app:layout_constraintHorizontal_bias="1.0"
@@ -78,7 +82,8 @@
                 android:fontFamily="@font/actor"
                 android:text="Nombre Completo"
                 android:textColor="@color/white"
-                android:textSize="17dp" />
+                android:textSize="17dp"
+                />
 
         </LinearLayout>
 
@@ -88,18 +93,18 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView_jugadores_plantilla"
         android:layout_width="0dp"
-        android:layout_height="430dp"
-        android:layout_marginTop="25dp"
+        android:layout_height="0dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="5dp"
         app:cardBackgroundColor="@color/white"
         app:layout_constraintEnd_toEndOf="@id/guideLineEnd"
         app:layout_constraintStart_toStartOf="@id/guideLineStart"
-        app:layout_constraintTop_toBottomOf="@+id/cardView_titulo_plantilla">
+        app:layout_constraintBottom_toBottomOf="@+id/guideLineRecyclerBottom"
+        app:layout_constraintTop_toBottomOf="@+id/guideLineRecyclerTop">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_jugadores_plantilla"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
@@ -163,14 +168,14 @@
     </LinearLayout>-->
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="366dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/guideLineEnd"
         app:layout_constraintStart_toEndOf="@+id/guideLineStart"
-        app:layout_constraintTop_toBottomOf="@+id/cardView_jugadores_plantilla">
+        app:layout_constraintTop_toBottomOf="@+id/guideLineRecyclerBottom">
 
         <TextView
             android:layout_width="wrap_content"
@@ -236,7 +241,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintGuide_percent="0.05"
+        app:layout_constraintGuide_begin="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -246,9 +251,39 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintGuide_percent="0.95"
+        app:layout_constraintGuide_end="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLine_entre_searchview_titulo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_begin="140dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLineRecyclerTop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_begin="230dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLineRecyclerBottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_end="80dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 
