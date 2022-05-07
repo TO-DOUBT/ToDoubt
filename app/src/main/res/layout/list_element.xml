@@ -12,8 +12,7 @@
         android:background="@drawable/estilo_fila_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        >
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:id="@+id/linear_fila_jugador_plantilla"
@@ -36,9 +35,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/actor"
                     android:text="Sebastián Huete Londoño"
-                    android:textSize="15dp"
-                   />
-
+                    android:textSize="15dp" />
             </HorizontalScrollView>
 
         </LinearLayout>
