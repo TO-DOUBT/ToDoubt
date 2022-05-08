@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/fondo"
     tools:context=".Home">
 
     <androidx.appcompat.widget.Toolbar
@@ -11,23 +12,24 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/white"
-        android:fontFamily="@font/actor"
         android:elevation="1dp"
+        android:fontFamily="@font/actor"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/menu_profile"
         app:title=" "
         app:titleTextColor="@color/black"
         tools:ignore="MissingConstraints" />
+
     <TextView
         android:id="@+id/home_ProximoPartido_txt2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginEnd="8dp"
+        android:fontFamily="@font/actor"
         android:gravity="center"
         android:paddingTop="1dp"
         android:text="@string/H_partidosJugados"
         android:textColor="@color/black"
-        android:fontFamily="@font/actor"
         app:layout_constraintBottom_toTopOf="@+id/home_gd_9"
         app:layout_constraintEnd_toStartOf="@+id/home_gd_5"
         app:layout_constraintStart_toStartOf="@+id/home_gd_1"
@@ -38,11 +40,11 @@
         android:layout_width="78dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
+        android:fontFamily="@font/actor"
         android:gravity="center"
         android:paddingTop="1dp"
         android:text="@string/H_partidosEmpatados"
         android:textColor="@color/black"
-        android:fontFamily="@font/actor"
         app:layout_constraintBottom_toTopOf="@+id/home_gd_9"
         app:layout_constraintEnd_toStartOf="@+id/home_gd_7"
         app:layout_constraintHorizontal_bias="0.0"
@@ -55,11 +57,11 @@
         android:layout_width="74dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
+        android:fontFamily="@font/actor"
         android:gravity="center"
         android:paddingTop="1dp"
         android:text="Ganados"
         android:textColor="@color/black"
-        android:fontFamily="@font/actor"
         app:layout_constraintBottom_toTopOf="@+id/home_gd_8"
         app:layout_constraintEnd_toStartOf="@+id/home_gd_7"
         app:layout_constraintHorizontal_bias="0.0"
@@ -72,11 +74,11 @@
         android:layout_width="74dp"
         android:layout_height="0dp"
         android:layout_marginEnd="8dp"
+        android:fontFamily="@font/actor"
         android:gravity="center"
         android:paddingTop="1dp"
         android:text="@string/H_partidosPerdidos"
         android:textColor="@color/black"
-        android:fontFamily="@font/actor"
         app:layout_constraintBottom_toTopOf="@+id/home_gd_8"
         app:layout_constraintEnd_toStartOf="@+id/home_gd_5"
         app:layout_constraintHorizontal_bias="0.0"
@@ -103,22 +105,22 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/bernabeu"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop"
+                android:src="@drawable/bernabeu" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/scrim_splash"
-                android:visibility="visible"/>
+                android:visibility="visible" />
 
             <TextView
                 android:id="@+id/home_ProximoPartido_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/actor"
                 android:text="@string/H_proxPartido"
                 android:textColor="@color/white"
-                android:fontFamily="@font/actor"
                 app:layout_constraintBottom_toTopOf="@+id/home_gd_card_4"
                 app:layout_constraintEnd_toStartOf="@+id/home_gd_card_2"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -144,10 +146,10 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginBottom="5dp"
+                android:fontFamily="@font/actor"
                 android:text="@string/H_visitante"
                 android:textColor="@color/white"
                 android:textSize="16sp"
-                android:fontFamily="@font/actor"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/home_gd_card_5"
                 app:layout_constraintStart_toStartOf="@+id/home_gd_card_1"
@@ -339,10 +341,10 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="5dp"
+        android:fontFamily="@font/actor"
         android:text="@string/H_partido"
         android:textColor="#000000"
         android:textSize="23sp"
-        android:fontFamily="@font/actor"
         app:layout_constraintBottom_toTopOf="@+id/home_gd_6"
         app:layout_constraintEnd_toStartOf="@+id/home_gd_2"
         app:layout_constraintHorizontal_bias="0.0"
@@ -477,9 +479,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:text=""
         android:textColor="@color/black"
         android:textSize="30sp"
-        android:text=""
         app:layout_constraintBottom_toTopOf="@+id/home_gd_entre_mitad_2parte"
         app:layout_constraintEnd_toStartOf="@+id/home_posicion_txt"
         app:layout_constraintStart_toStartOf="@+id/home_gd_10"
@@ -551,10 +553,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:fontFamily="@font/actor"
         android:gravity="end"
         android:text="@string/H_dLider"
         android:textSize="14sp"
-        android:fontFamily="@font/actor"
         app:layout_constraintBottom_toTopOf="@+id/home_gd_entre_2parte_3parte"
         app:layout_constraintEnd_toStartOf="@+id/home_gd_2"
         app:layout_constraintHorizontal_bias="0.0"
@@ -591,6 +593,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/home_gd_1"
         app:layout_constraintTop_toTopOf="@+id/home_gd_11">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -598,14 +601,14 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/equipo"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop"
+                android:src="@drawable/equipo" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/scrim_splash"
-                android:visibility="visible"/>
+                android:visibility="visible" />
 
             <ImageView
                 android:id="@+id/home_flecha_4"
@@ -625,10 +628,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginBottom="8dp"
+                android:fontFamily="@font/actor"
                 android:text="@string/H_gestion"
                 android:textColor="@color/white"
                 android:textSize="20dp"
-                android:fontFamily="@font/actor"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.083"
@@ -653,6 +656,7 @@
         app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="@+id/home_gd_1"
         app:layout_constraintTop_toTopOf="@+id/home_gd_8">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -660,14 +664,14 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/calendar"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop"
+                android:src="@drawable/calendar" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/scrim_splash"
-                android:visibility="visible"/>
+                android:visibility="visible" />
 
             <ImageView
                 android:id="@+id/home_flecha_2"
@@ -684,9 +688,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:fontFamily="@font/actor"
                 android:text="@string/H_proximosEventos"
                 android:textColor="@color/white"
-                android:fontFamily="@font/actor"
                 android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -710,6 +714,7 @@
         app:layout_constraintEnd_toStartOf="@+id/home_gd_2"
         app:layout_constraintStart_toStartOf="@+id/home_gd_7"
         app:layout_constraintTop_toTopOf="@+id/home_gd_11">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -717,14 +722,14 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/botas"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop"
+                android:src="@drawable/botas" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/scrim_splash"
-                android:visibility="visible"/>
+                android:visibility="visible" />
 
             <ImageView
                 android:id="@+id/home_flecha_3"
@@ -746,10 +751,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginBottom="8dp"
+                android:fontFamily="@font/actor"
                 android:text="@string/H_clasificacion"
                 android:textColor="@color/white"
                 android:textSize="20dp"
-                android:fontFamily="@font/actor"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.083"

@@ -76,6 +76,7 @@ public class PeticionDatos {
     public static EstadiscasEquipo pedirDatos() {
         int contador = 0;
         int lider = 0;
+        int contadorEquipos = 0;
         Elements newsHeadlines = doc.getElementsByClass("table-row");
         for (Element headline : newsHeadlines){
             if(contador != 1){
@@ -96,7 +97,11 @@ public class PeticionDatos {
                    contador++;
                }
             }
-            a.getClasificacion().add(headline.child(0).child(1).child(1).text() + ";" + headline.child(1).child(0).text());
+            if (contadorEquipos < 18){
+                a.getClasificacion().add(headline.child(0).child(1).child(1).text() + ";" + headline.child(1).child(0).text());
+                contadorEquipos++;
+            }
+
         }
         return a;
     }
